@@ -2187,14 +2187,16 @@
 	     ("Michelangelo Rodriguez" . "michelangelo.rodriguez@gmail.com"))
 	    (:commit . "a7a8d4adc4f4590669cb8cbad086db12d831ad82"))])
  (greenbar .
-	   [(1 1)
-	    nil "Mark comint output with \"greenbar\" background" tar
+	   [(1 2)
+	    ((emacs
+	      (27 1)))
+	    "Mark comint output with \"greenbar\" background" tar
 	    ((:keywords "faces" "terminals")
 	     (:maintainer "Michael R. Mauger" . "michael@mauger.com")
 	     (:authors
 	      ("Michael R. Mauger" . "michael@mauger.com"))
 	     (:url . "https://elpa.gnu.org/packages/greenbar.html")
-	     (:commit . "9526f29d073c533c3e54f0a7597eef1587ffb99e"))])
+	     (:commit . "7b651257bd0536d454f4b896212b3fe1f8c75024"))])
  (gtags-mode .
 	     [(1 8 6)
 	      ((emacs
@@ -4776,7 +4778,7 @@
 	       (:url . "https://elpa.gnu.org/packages/transcribe.html")
 	       (:commit . "89832e4cdc1e6d8262a4a2c9d1ff70f398b8faf0"))])
  (transient .
-	    [(0 9 0)
+	    [(0 9 1)
 	     ((emacs
 	       (26 1))
 	      (compat
@@ -4789,7 +4791,7 @@
 	      (:maintainer "Jonas Bernoulli" . "emacs.transient@jonas.bernoulli.dev")
 	      (:authors
 	       ("Jonas Bernoulli" . "emacs.transient@jonas.bernoulli.dev"))
-	      (:commit . "ef28fbe24d43760925f0143e009bc81a20b025e3"))])
+	      (:commit . "7937e57e29b5f3ee6f871e67e69a1fb20f353c38"))])
  (transient-cycles .
 		   [(1 1)
 		    ((emacs

@@ -7,7 +7,6 @@
 (scroll-bar-mode 0)
 (setq default-frame-alist (cons '(undecorated . t) 
                                 (assq-delete-all 'undecorated default-frame-alist)))
-(ido-mode 1)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
 (set-frame-font "11" nil t)
@@ -16,6 +15,28 @@
 (setq scroll-conservatively 100)
 #+end_src
 
+* IDO
+** enable ido mode
+#+begin_src emacs-lisp
+  (setq ido-enable-flex-matching nil)
+  (setq ido-create-new-buffer 'always)
+  (setq ido-everywhere t)
+  (ido-mode 1)
+#+end_src
+** switch buffers
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x b") 'ido-switch-buffer)
+#+end_src
+
+* buffers
+** enable ibuffer
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+#+end_src
+** expert mode
+#+begin_src emacs-lisp
+  (setq ibuffer-expert t)
+#+end_src
 * Autocomplete brackets
 #+begin_src emacs-lisp
   ;; autocomplete brackets
