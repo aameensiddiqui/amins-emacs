@@ -1,0 +1,30 @@
+
+;; ----- smex-history -----
+(
+ byte-compile-file
+ list-packages
+ eval-buffer
+ shell
+ switch-to-prev-buffer
+ compile
+ customize-themes
+)
+
+;; ----- smex-data -----
+(
+ (custom-theme-save . 1)
+ (customize-themes . 5)
+ (compile . 43)
+ (shell . 12)
+ (list-packages . 8)
+ (recompile . 9)
+ (eval-buffer . 53)
+ (package-autoremove . 1)
+ (whitespace-mode . 1)
+ (list-character-sets . 1)
+ (customize . 1)
+ (kill-line . 3)
+ (package-install . 1)
+ (switch-to-prev-buffer . 1)
+ (byte-compile-file . 4)
+)
