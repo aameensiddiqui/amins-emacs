@@ -9,7 +9,7 @@
 (global-display-line-numbers-mode t)
 (set-frame-font "11" nil t)
 
-(global-hl-line-mode t)
+;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
 
 (setq ido-enable-flex-matching nil)
@@ -40,3 +40,8 @@
 ;; enable disabled commands
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(use-package org-modern
+  :ensure t
+  :hook
+  (org-mode . org-modern-mode))

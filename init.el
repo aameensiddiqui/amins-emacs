@@ -1,4 +1,4 @@
-(message "✅ init.el loaded!")
+(message "xX-init.el load ho gaya!-Xx")
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
@@ -16,7 +16,7 @@
   (package-install 'gruber-darker-theme))
 
 ;; backup files configuration
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist `(("." . "~/Programming/.emacs_backups/backups")))
 
 ;; Custom variables (auto-generated)
 (custom-set-variables

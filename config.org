@@ -11,7 +11,7 @@
 (global-display-line-numbers-mode t)
 (set-frame-font "11" nil t)
 
-(global-hl-line-mode t)
+;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
 #+end_src
 
@@ -65,4 +65,12 @@
   ;; enable disabled commands
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+#+end_src
+
+* org-modern bullet mode
+#+begin_src emacs-lisp
+  (use-package org-modern
+    :ensure t
+    :hook
+    (org-mode . org-modern-mode))
 #+end_src

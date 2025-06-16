@@ -1,25 +1,25 @@
 
 ;; ----- smex-history -----
 (
- byte-compile-file
- list-packages
  eval-buffer
+ list-packages
  shell
- switch-to-prev-buffer
  compile
- customize-themes
+ package-autoremove
+ byte-compile-file
+ switch-to-prev-buffer
 )
 
 ;; ----- smex-data -----
 (
  (custom-theme-save . 1)
  (customize-themes . 5)
- (compile . 43)
- (shell . 12)
- (list-packages . 8)
+ (compile . 51)
+ (shell . 25)
+ (list-packages . 10)
  (recompile . 9)
- (eval-buffer . 53)
- (package-autoremove . 1)
+ (eval-buffer . 61)
+ (package-autoremove . 2)
  (whitespace-mode . 1)
  (list-character-sets . 1)
  (customize . 1)
