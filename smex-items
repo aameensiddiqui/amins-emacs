@@ -4,22 +4,22 @@
  eval-buffer
  list-packages
  shell
+ shell-command
  compile
  package-autoremove
  byte-compile-file
- switch-to-prev-buffer
 )
 
 ;; ----- smex-data -----
 (
  (custom-theme-save . 1)
  (customize-themes . 5)
- (compile . 51)
- (shell . 25)
- (list-packages . 10)
+ (compile . 53)
+ (shell . 27)
+ (list-packages . 13)
  (recompile . 9)
- (eval-buffer . 61)
- (package-autoremove . 2)
+ (eval-buffer . 63)
+ (package-autoremove . 3)
  (whitespace-mode . 1)
  (list-character-sets . 1)
  (customize . 1)
@@ -27,4 +27,5 @@
  (package-install . 1)
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
+ (shell-command . 1)
 )

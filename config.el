@@ -41,7 +41,24 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-(use-package org-modern
+;;  (use-package org-modern
+;;    :ensure t
+;;    :hook
+;;    (org-mode . org-modern-mode))
+
+;;    (use-package yasnippet
+;;      ensure t)
+
+(defun config-visit ()
+  (interactive)
+  (find-file "~/.emacs.d/config.org"))
+(global-set-key (kbd "C-c e") 'config-visit)
+
+(defun config-reload ()
+  (interactive)
+  (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+(global-set-key (kbd "C-c r") 'config-reload)
+
+(use-package rainbow-mode
   :ensure t
-  :hook
-  (org-mode . org-modern-mode))
+  :init (rainbow-mode 1))

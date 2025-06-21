@@ -69,8 +69,37 @@
 
 * org-modern bullet mode
 #+begin_src emacs-lisp
-  (use-package org-modern
+;;  (use-package org-modern
+;;    :ensure t
+;;    :hook
+;;    (org-mode . org-modern-mode))
+#+end_src
+
+* yasnippet
+#+begin_src emacs-lisp
+;;    (use-package yasnippet
+;;      ensure t)
+#+end_src
+
+* config edit/reload
+** edit
+#+begin_src emacs-lisp
+  (defun config-visit ()
+    (interactive)
+    (find-file "~/.emacs.d/config.org"))
+  (global-set-key (kbd "C-c e") 'config-visit)
+#+end_src
+** reload
+#+begin_src emacs-lisp
+  (defun config-reload ()
+    (interactive)
+    (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+  (global-set-key (kbd "C-c r") 'config-reload)
+#+end_src
+
+* rainbow
+#+begin_src emacs-lisp
+  (use-package rainbow-mode
     :ensure t
-    :hook
-    (org-mode . org-modern-mode))
+    :init (rainbow-mode 1))
 #+end_src
