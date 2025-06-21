@@ -12,6 +12,8 @@
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
 
+(global-subword-mode 1)
+
 (setq ido-enable-flex-matching nil)
 (setq ido-create-new-buffer 'always)
 (setq ido-everywhere t)
@@ -62,3 +64,17 @@
 (use-package rainbow-mode
   :ensure t
   :init (rainbow-mode 1))
+
+(defun split-and-follow-horizontally ()
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  (other-window 1))
+(global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+
+(defun split-and-follow-vertically ()
+  (interactive)
+  (split-window-right)
+  (balance-windows)
+  (other-window 1))
+(global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
