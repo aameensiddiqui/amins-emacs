@@ -23,7 +23,6 @@
   (global-subword-mode 1)
 #+end_src
 
-
 * Terminal
 #+begin_src emacs-lisp
   (defvar my-term-shell "/bin/bash")
