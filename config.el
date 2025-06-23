@@ -3,16 +3,24 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
+(set-background-color "#000000")
 (setq default-frame-alist (cons '(undecorated . t) 
-                                (assq-delete-all 'undecorated default-frame-alist)))
+				(assq-delete-all 'undecorated default-frame-alist)))
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
 (set-frame-font "11" nil t)
-
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
+;; (add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB"))
+;; (add-to-list 'default-frame-alist '(background-color . "#000000"))
+;; (set-foreground-color "#FFF")
 
 (global-subword-mode 1)
+
+(defvar my-term-shell "/bin/bash")
+(defadvice ansi-term (before force-bash)
+  (interactive (list my-term-shell)))
+(ad-activate 'ansi-term)
 
 (setq ido-enable-flex-matching nil)
 (setq ido-create-new-buffer 'always)

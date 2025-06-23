@@ -1,23 +1,37 @@
 * UI changes
 #+begin_src emacs-lisp
-  ;; gui config
-(setq inhibit-startup-screen t)
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-(setq default-frame-alist (cons '(undecorated . t) 
-                                (assq-delete-all 'undecorated default-frame-alist)))
-(setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode t)
-(set-frame-font "11" nil t)
-
-;; (global-hl-line-mode t)
-(setq scroll-conservatively 100)
+    ;; gui config
+  (setq inhibit-startup-screen t)
+  (menu-bar-mode 0)
+  (tool-bar-mode 0)
+  (scroll-bar-mode 0)
+  (set-background-color "#000000")
+  (setq default-frame-alist (cons '(undecorated . t) 
+				  (assq-delete-all 'undecorated default-frame-alist)))
+  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode t)
+  (set-frame-font "11" nil t)
+  ;; (global-hl-line-mode t)
+  (setq scroll-conservatively 100)
+  ;; (add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB"))
+  ;; (add-to-list 'default-frame-alist '(background-color . "#000000"))
+  ;; (set-foreground-color "#FFF")
 #+end_src
+
 ** subword camelcasing
 #+begin_src emacs-lisp
   (global-subword-mode 1)
 #+end_src
+
+
+* Terminal
+#+begin_src emacs-lisp
+  (defvar my-term-shell "/bin/bash")
+  (defadvice ansi-term (before force-bash)
+    (interactive (list my-term-shell)))
+  (ad-activate 'ansi-term)
+#+end_src
+
 * IDO
 ** enable ido mode
 #+begin_src emacs-lisp
@@ -26,20 +40,24 @@
   (setq ido-everywhere t)
   (ido-mode 1)
 #+end_src
+
 ** switch buffers
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x b") 'ido-switch-buffer)
 #+end_src
 
 * buffers
+
 ** enable ibuffer
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ibuffer)
 #+end_src
+
 ** expert mode
 #+begin_src emacs-lisp
   (setq ibuffer-expert t)
 #+end_src
+
 * Autocomplete brackets
 #+begin_src emacs-lisp
   ;; autocomplete brackets

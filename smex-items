@@ -2,10 +2,10 @@
 ;; ----- smex-history -----
 (
  eval-buffer
- list-packages
+ compile
  shell
  shell-command
- compile
+ list-packages
  package-autoremove
  byte-compile-file
 )
@@ -14,11 +14,11 @@
 (
  (custom-theme-save . 1)
  (customize-themes . 5)
- (compile . 53)
- (shell . 27)
+ (compile . 66)
+ (shell . 32)
  (list-packages . 13)
  (recompile . 9)
- (eval-buffer . 63)
+ (eval-buffer . 67)
  (package-autoremove . 3)
  (whitespace-mode . 1)
  (list-character-sets . 1)
@@ -27,5 +27,5 @@
  (package-install . 1)
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
- (shell-command . 1)
+ (shell-command . 4)
 )
