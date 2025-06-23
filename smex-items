@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ ansi-term
  eval-buffer
  compile
  shell
  shell-command
  list-packages
  package-autoremove
- byte-compile-file
 )
 
 ;; ----- smex-data -----
@@ -28,4 +28,5 @@
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
  (shell-command . 4)
+ (ansi-term . 2)
 )

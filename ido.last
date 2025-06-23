@@ -6,7 +6,7 @@
  ("/home/amin/Programming/mysql/" . "prepare/")
  ("/home/amin/Amin_s library/" . "coding/")
  ("/home/amin/Programming/javaPrograms/" . "new/")
- ("/home/amin/Programming/" . "cPrograms/")
+ ("/home/amin/Programming/" . "javaPrograms/")
  ("/home/amin/.emacs.d/" . "auto-save-list/")
  ("/home/" . "amin/")
  ("/" . "home/")
@@ -25,11 +25,11 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/amin/Programming/javaPrograms/new/"
+ "/home/amin/Programming/purehtml/"
  "/home/amin/.emacs.d/"
  "/home/amin/Programming/cPrograms/yo/"
- "/home/amin/Programming/purehtml/"
  "/home/amin/Programming/mysql/prepare/"
- "/home/amin/Programming/javaPrograms/new/"
  "/home/amin/Programming/cPrograms/"
  "/home/amin/Programming/"
  "/home/amin/Programming/cellularAutomata/"
@@ -46,23 +46,25 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "BubbleSort.java"
+ "BinS.java"
+ "Bin.java"
+ "index.html"
  "init.el"
  "main.c"
- "index.html"
  "info.TXT"
  "mysql_interview_summary.org"
  "fib.java"
  "fib.c"
- "1to2000.html"
- "config.org"
- "1to100.html"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/amin/.emacs.d/" (26713 22900 514543 450000) "./" "smex-items" "../" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "elpa/" "config.el" "README.md")
+ ("/home/amin/Programming/javaPrograms/new/" (26713 31068 66696 670000) "SelectionSort.java" "./" "Greet.java" "pythonpro.py" "HelloWorld.class" "Bin.java" "Recursion.java" "../" "QuickSortNew.java" "IS.java" "HelloWorld.java" "IS.class" "InsertionSort.java" "Hello.class" "RecursionInArray.java" "fib.java" "BinaryS.java" "BinaryS.class" "Practicssss.java" "leetcode/" "Bin.class" "Solution1.java" "BinarySearch.class" "BS.class" "GoCorona.java" "BubbleSort.class" "BinS.class" "QuickS.java" "Hello.java" "QS.java" "P.java" "BinS.java" "InsertionSort.class" "Factorial.java" "QuickSort.class" "fib.class" "QS.class" "AminSort.java" "QuickSortBetter.java" "Test.java" "BubbleSort.java" "Solution.java" "BS.java" "Pattern.java" "GoCorona.class" "QuickSort.java" "BinarySearch.java" "Test.class" "RandomGeneration.java")
 
- ("/home/amin/Programming/cPrograms/yo/" (26713 6739 216554 90000) "./" "../" ".git/" "main.c" "a.out")
+ ("/home/amin/Programming/cPrograms/yo/" (26713 22836 586122 460000) "./" "../" ".git/" "main.c" "a.out")
+
+ ("/home/amin/.emacs.d/" (26713 24549 161640 140000) "./" "smex-items" "../" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "elpa/" "config.el" "README.md")
 
  ("/home/amin/" (26713 7062 448082 71000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Android/" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".lesshst" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Documents/" ".gtkrc-xfce" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" "android-studio/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".pki/" "eclipse-workspace/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" "flutterishere/" ".wine/" ".android/" ".xsession-errors.old" "amin_siddiqui.pdf" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
 
@@ -71,8 +73,6 @@
  ("/home/amin/Programming/cPrograms/" (26713 1187 454852 572000) "./" "build/" ".vscode/" "a6.c" "yo/" "HelloWorld.c" "../" "assn3.c" "assn12.c" "assn11.c" "assn8.c" "hello.c" "hello.c~" "assn6.c" "fib.c" "a.out" "assn13.c")
 
  ("/home/amin/Programming/mysql/prepare/" (26712 18784 773863 999000) "./" "../" "mysql_interview_summary.org" "info.TXT")
-
- ("/home/amin/Programming/javaPrograms/new/" (26710 59891 278121 781000) "SelectionSort.java" "./" "Greet.java" "pythonpro.py" "HelloWorld.class" "Bin.java" "Recursion.java" "../" "QuickSortNew.java" "IS.java" "HelloWorld.java" "IS.class" "InsertionSort.java" "Hello.class" "RecursionInArray.java" "fib.java" "BinaryS.java" "BinaryS.class" "Practicssss.java" "leetcode/" "Bin.class" "Solution1.java" "BinarySearch.class" "BS.class" "GoCorona.java" "BubbleSort.class" "QuickS.java" "Hello.java" "QS.java" "P.java" "InsertionSort.class" "Factorial.java" "QuickSort.class" "fib.class" "QS.class" "AminSort.java" "QuickSortBetter.java" "Test.java" "BubbleSort.java" "Solution.java" "BS.java" "Pattern.java" "GoCorona.class" "QuickSort.java" "BinarySearch.java" "Test.class" "RandomGeneration.java")
 
  ("/home/amin/Programming/mysql/" (26712 14791 329783 488000) "./" "sakila-db.tar.gz" "study.txt" "../" "mysql root password" "sql_history" "prepare/" "world-db.tar.gz" "sql-course-materials.zip" "menagerie-db/" "queries_log.txt" "airport-db.tar.gz" "world-db/" "mysql-apt-config_0.8.34-1_all.deb" "menagerie-db.tar.gz" "sql-course-materials/" "sakila-db/")
 
