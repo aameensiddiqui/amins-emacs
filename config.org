@@ -13,6 +13,16 @@
   ;; (global-hl-line-mode t)
   (setq scroll-conservatively 100)
 #+end_src
+** clock
+#+begin_src emacs-lisp
+  (display-time-mode 1)
+#+end_src
+
+** show line and column number on modeline
+#+begin_src emacs-lisp
+  (line-number-mode 1)
+  (column-number-mode 1)
+#+end_src
 
 ** subword camelcasing
 #+begin_src emacs-lisp
@@ -53,6 +63,31 @@
   (setq ibuffer-expert t)
 #+end_src
 
+** always kill current buffer
+#+begin_src emacs-lisp
+  (defun kill-current-buffer()
+    (interactive)
+    (kill-buffer (current-buffer)))
+  (global-set-key (kbd "C-x k") 'kill-current-buffer)
+#+end_src
+
+** kill all buffers
+#+begin_src emacs-lisp
+  (defun kill-all-buffers ()
+    (interactive)
+    (mapc 'kill-buffer (buffer-list)))
+  (global-set-key (kbd "C-x M-k") 'kill-all-buffers)
+#+end_src
+
+* dashboard
+#+begin_src emacs-lisp
+    (use-package dashboard
+      :ensure t
+      :config
+      (dashboard-setup-startup-hook)
+      (setq dashboard-items '((recents . 10)))
+      (setq dashboard-banner-logo-title "Welcome back!"))
+#+end_src
 * Convenient functions
 ** kill whole word
 #+begin_src emacs-lisp
@@ -61,6 +96,26 @@
     (backward-word)
     (kill-word 1))
     (global-set-key (kbd "C-c w w") 'kill-whole-word)
+#+end_src
+
+** copy whole line
+#+begin_src emacs-lisp
+  (defun copy-whole-line()
+    (interactive)
+    (save-excursion
+      (kill-new
+       (buffer-substring
+       (point-at-bol)
+       (point-at-eol)))))
+  (global-set-key (kbd "C-c w l") 'copy-whole-line)
+#+end_src
+
+* Company for autocompletion
+#+begin_src emacs-lisp
+  (use-package company
+    :ensure t
+    :init
+    (add-hook 'after-init-hook 'global-company-mode))
 #+end_src
 * Autocomplete brackets
 #+begin_src emacs-lisp
@@ -92,7 +147,7 @@
 (put 'downcase-region 'disabled nil)
 #+end_src
 
-* org-modern bullet mode
+* org
 #+begin_src emacs-lisp
 ;;  (use-package org-modern
 ;;    :ensure t
@@ -106,7 +161,7 @@
 ;;      ensure t)
 #+end_src
 
-* config edit/reload
+* config.org edit/reload
 ** edit
 #+begin_src emacs-lisp
   (defun config-visit ()
@@ -127,6 +182,13 @@
   (use-package rainbow-mode
     :ensure t
     :init (rainbow-mode 1))
+#+end_src
+** for colourful braces
+#+begin_src emacs-lisp
+  (use-package rainbow-delimiters
+    :ensure t
+    :init
+    (rainbow-delimiters-mode 1))
 #+end_src
 
 * window splitting cursor function
@@ -151,4 +213,25 @@
   (use-package hungry-delete
     :ensure t
     :config (global-hungry-delete-mode))
+#+end_src
+
+* modeline
+#+begin_src emacs-lisp
+      (use-package spaceline
+	:ensure t
+	:config
+	(require 'spaceline-config)
+	(setq powerline-default-separator (quote arrow))
+	(spaceline-spacemacs-theme))
+#+end_src
+** diminish (removes minor modes)
+#+begin_src emacs-lisp
+    (use-package diminish
+      :ensure t
+      :init
+      (diminish 'hungry-delete-mode)
+      (diminish 'which-key-mode)
+      (diminish 'rainbow-mode)
+      (diminish 'company-mode)
+      (diminish 'subword-mode))
 #+end_src

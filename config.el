@@ -11,6 +11,11 @@
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
 
+(display-time-mode 1)
+
+(line-number-mode 1)
+(column-number-mode 1)
+
 (global-subword-mode 1)
 
 (defvar my-term-shell "/bin/bash")
@@ -29,11 +34,42 @@
 
 (setq ibuffer-expert t)
 
+(defun kill-current-buffer()
+  (interactive)
+  (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
+
+(defun kill-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
+(global-set-key (kbd "C-x M-k") 'kill-all-buffers)
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents . 10)))
+  (setq dashboard-banner-logo-title "Welcome back!"))
+
 (defun kill-whole-word()
   (interactive)
   (backward-word)
   (kill-word 1))
   (global-set-key (kbd "C-c w w") 'kill-whole-word)
+
+(defun copy-whole-line()
+  (interactive)
+  (save-excursion
+    (kill-new
+     (buffer-substring
+     (point-at-bol)
+     (point-at-eol)))))
+(global-set-key (kbd "C-c w l") 'copy-whole-line)
+
+(use-package company
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))
 
 ;; autocomplete brackets
 (electric-pair-mode 1)
@@ -75,6 +111,11 @@
   :ensure t
   :init (rainbow-mode 1))
 
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (rainbow-delimiters-mode 1))
+
 (defun split-and-follow-horizontally ()
   (interactive)
   (split-window-below)
@@ -92,3 +133,19 @@
 (use-package hungry-delete
   :ensure t
   :config (global-hungry-delete-mode))
+
+(use-package spaceline
+  :ensure t
+  :config
+  (require 'spaceline-config)
+  (setq powerline-default-separator (quote arrow))
+  (spaceline-spacemacs-theme))
+
+(use-package diminish
+  :ensure t
+  :init
+  (diminish 'hungry-delete-mode)
+  (diminish 'which-key-mode)
+  (diminish 'rainbow-mode)
+  (diminish 'company-mode)
+  (diminish 'subword-mode))

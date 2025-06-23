@@ -20,14 +20,14 @@
  ("/home/amin/programming/javaPrograms/javaProjects/demo/src/" . "main/")
  ("/home/amin/programming/javaPrograms/" . "new/")
  ("/home/amin/programming/" . "cPrograms/")
- ("/home/amin/" . ".emacs.d/")
+ ("/home/amin/" . "Programming/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
  "/home/amin/.emacs.d/"
- "/home/amin/Programming/"
  "/home/amin/Programming/javaPrograms/new/"
+ "/home/amin/Programming/"
  "/home/amin/Programming/purehtml/"
  "/home/amin/Programming/cPrograms/yo/"
  "/home/amin/Programming/mysql/prepare/"
@@ -46,25 +46,27 @@
 
 ;; ----- ido-work-file-list -----
 (
- "config.el"
  "init.el"
+ "Bin.java"
+ "BinS.java"
  "config.org"
+ "config.el"
  "init.el.backup"
  "1to2000.html"
  "BubbleSort.java"
- "BinS.java"
- "Bin.java"
  "index.html"
  "main.c"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/amin/.emacs.d/" (26713 38405 770907 716000) "./" "smex-items" "../" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "elpa/" "config.el" "README.md")
+ ("/home/amin/.emacs.d/" (26713 46982 208845 257000) "./" "smex-items" "../" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" ".#config.org" "recentf" "elpa/" "config.el" "README.md")
 
- ("/home/amin/" (26713 33966 966093 318000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Android/" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".lesshst" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Documents/" ".gtkrc-xfce" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" "android-studio/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".pki/" "eclipse-workspace/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" "flutterishere/" ".wine/" ".android/" ".xsession-errors.old" "amin_siddiqui.pdf" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
+ ("/home/amin/Programming/javaPrograms/new/" (26713 42371 248955 333000) "SelectionSort.java" "./" "Greet.java" "pythonpro.py" "HelloWorld.class" "Bin.java" "Recursion.java" "../" "QuickSortNew.java" "IS.java" "HelloWorld.java" "IS.class" "InsertionSort.java" "Hello.class" "RecursionInArray.java" "fib.java" "BinaryS.java" "BinaryS.class" "Practicssss.java" "leetcode/" "Bin.class" "Solution1.java" "BinarySearch.class" "BS.class" "GoCorona.java" "BubbleSort.class" "BinS.class" "QuickS.java" "Hello.java" "QS.java" "P.java" "BinS.java" "InsertionSort.class" "Factorial.java" "QuickSort.class" "fib.class" "QS.class" "AminSort.java" "QuickSortBetter.java" "Test.java" "BubbleSort.java" "Solution.java" "BS.java" "Pattern.java" "GoCorona.class" "QuickSort.java" "BinarySearch.java" "Test.class" "RandomGeneration.java")
 
- ("/home/amin/Programming/javaPrograms/new/" (26713 31068 66696 670000) "SelectionSort.java" "./" "Greet.java" "pythonpro.py" "HelloWorld.class" "Bin.java" "Recursion.java" "../" "QuickSortNew.java" "IS.java" "HelloWorld.java" "IS.class" "InsertionSort.java" "Hello.class" "RecursionInArray.java" "fib.java" "BinaryS.java" "BinaryS.class" "Practicssss.java" "leetcode/" "Bin.class" "Solution1.java" "BinarySearch.class" "BS.class" "GoCorona.java" "BubbleSort.class" "BinS.class" "QuickS.java" "Hello.java" "QS.java" "P.java" "BinS.java" "InsertionSort.class" "Factorial.java" "QuickSort.class" "fib.class" "QS.class" "AminSort.java" "QuickSortBetter.java" "Test.java" "BubbleSort.java" "Solution.java" "BS.java" "Pattern.java" "GoCorona.class" "QuickSort.java" "BinarySearch.java" "Test.class" "RandomGeneration.java")
+ ("/home/amin/Programming/" (26713 33642 323197 92000) "Silasya Private Limited.pdf" "./" "try.zip" "cce4/" "../" "mission_control.txt" "interview_prep_notes" "cdac project/" "tailwindcss/" "cPrograms/" "portfolio/" "git key" "learn linux" "javaPrograms/" "react/" "databases/" "1to2000.html" "yoda/" "flutter_tasks/" "visualstudioapp/" "portfolio-2/" "mini/" "zentrumhub/" "emacstry/" "jgrasp/" ".emacs_backups/" "mysql/" "eclipse_sw/" "cellularAutomata/" "Vector.png" "templeoshere/" "purehtml/" "Gmail - Welcome to NPTEL Online Course _ Operations Management.pdf" "prep/" "nextjs/" "Quicksort_algorithm_original_paper.pdf")
+
+ ("/home/amin/" (26713 38893 89205 508000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Android/" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".lesshst" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Documents/" ".gtkrc-xfce" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" "android-studio/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".pki/" "eclipse-workspace/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" "flutterishere/" ".wine/" ".android/" ".xsession-errors.old" "amin_siddiqui.pdf" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
 
  ("/home/amin/Programming/cPrograms/yo/" (26713 22836 586122 460000) "./" "../" ".git/" "main.c" "a.out")
 
@@ -75,8 +77,6 @@
  ("/home/amin/Programming/mysql/prepare/" (26712 18784 773863 999000) "./" "../" "mysql_interview_summary.org" "info.TXT")
 
  ("/home/amin/Programming/mysql/" (26712 14791 329783 488000) "./" "sakila-db.tar.gz" "study.txt" "../" "mysql root password" "sql_history" "prepare/" "world-db.tar.gz" "sql-course-materials.zip" "menagerie-db/" "queries_log.txt" "airport-db.tar.gz" "world-db/" "mysql-apt-config_0.8.34-1_all.deb" "menagerie-db.tar.gz" "sql-course-materials/" "sakila-db/")
-
- ("/home/amin/Programming/" (26710 65234 450783 790000) "Silasya Private Limited.pdf" "./" "try.zip" "cce4/" "../" "mission_control.txt" "interview_prep_notes" "cdac project/" "tailwindcss/" "cPrograms/" "portfolio/" "git key" "learn linux" "javaPrograms/" "react/" "databases/" "1to2000.html" "yoda/" "flutter_tasks/" "visualstudioapp/" "portfolio-2/" "mini/" "zentrumhub/" "emacstry/" "jgrasp/" ".emacs_backups/" "mysql/" "eclipse_sw/" "cellularAutomata/" "Vector.png" "templeoshere/" "purehtml/" "Gmail - Welcome to NPTEL Online Course _ Operations Management.pdf" "prep/" "nextjs/" "Quicksort_algorithm_original_paper.pdf")
 
  ("/home/amin/Programming/cellularAutomata/" (26710 44164 619464 538000) "index.js" "./" "index.ts" "../" "node_modules/" "package.json" ".git/" "index.html" "tsconfig.json" "package-lock.json" "README.md" ".gitignore")
 

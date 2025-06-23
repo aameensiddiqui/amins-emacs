@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ list-packages
+ ansi-term
  eval-buffer
  describe-face
- ansi-term
  compile
  shell
  shell-command
- list-packages
 )
 
 ;; ----- smex-data -----
@@ -16,9 +16,9 @@
  (customize-themes . 5)
  (compile . 67)
  (shell . 32)
- (list-packages . 13)
+ (list-packages . 16)
  (recompile . 9)
- (eval-buffer . 99)
+ (eval-buffer . 106)
  (package-autoremove . 3)
  (whitespace-mode . 1)
  (list-character-sets . 1)
@@ -28,6 +28,6 @@
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
  (shell-command . 4)
- (ansi-term . 5)
+ (ansi-term . 7)
  (describe-face . 1)
 )
