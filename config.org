@@ -5,7 +5,6 @@
   (menu-bar-mode 0)
   (tool-bar-mode 0)
   (scroll-bar-mode 0)
-  (set-background-color "#000000")
   (setq default-frame-alist (cons '(undecorated . t) 
 				  (assq-delete-all 'undecorated default-frame-alist)))
   (setq display-line-numbers-type 'relative)
@@ -13,9 +12,6 @@
   (set-frame-font "11" nil t)
   ;; (global-hl-line-mode t)
   (setq scroll-conservatively 100)
-  ;; (add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB"))
-  ;; (add-to-list 'default-frame-alist '(background-color . "#000000"))
-  ;; (set-foreground-color "#FFF")
 #+end_src
 
 ** subword camelcasing
@@ -57,6 +53,15 @@
   (setq ibuffer-expert t)
 #+end_src
 
+* Convenient functions
+** kill whole word
+#+begin_src emacs-lisp
+  (defun kill-whole-word()
+    (interactive)
+    (backward-word)
+    (kill-word 1))
+    (global-set-key (kbd "C-c w w") 'kill-whole-word)
+#+end_src
 * Autocomplete brackets
 #+begin_src emacs-lisp
   ;; autocomplete brackets
@@ -139,4 +144,11 @@
     (balance-windows)
     (other-window 1))
   (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+#+end_src
+
+* hungry-delete package
+#+begin_src emacs-lisp
+  (use-package hungry-delete
+    :ensure t
+    :config (global-hungry-delete-mode))
 #+end_src

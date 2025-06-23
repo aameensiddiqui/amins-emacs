@@ -20,18 +20,18 @@
  ("/home/amin/programming/javaPrograms/javaProjects/demo/src/" . "main/")
  ("/home/amin/programming/javaPrograms/" . "new/")
  ("/home/amin/programming/" . "cPrograms/")
- ("/home/amin/" . "Programming/")
+ ("/home/amin/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/amin/.emacs.d/"
+ "/home/amin/Programming/"
  "/home/amin/Programming/javaPrograms/new/"
  "/home/amin/Programming/purehtml/"
- "/home/amin/.emacs.d/"
  "/home/amin/Programming/cPrograms/yo/"
  "/home/amin/Programming/mysql/prepare/"
  "/home/amin/Programming/cPrograms/"
- "/home/amin/Programming/"
  "/home/amin/Programming/cellularAutomata/"
  "/home/amin/Programming/portfolio-2/src/"
  "/home/amin/Amin_s library/coding/"
@@ -46,27 +46,27 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "config.el"
+ "init.el"
+ "config.org"
+ "init.el.backup"
+ "1to2000.html"
  "BubbleSort.java"
  "BinS.java"
  "Bin.java"
  "index.html"
- "init.el"
  "main.c"
- "info.TXT"
- "mysql_interview_summary.org"
- "fib.java"
- "fib.c"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/amin/.emacs.d/" (26713 38405 770907 716000) "./" "smex-items" "../" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "elpa/" "config.el" "README.md")
+
+ ("/home/amin/" (26713 33966 966093 318000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Android/" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".lesshst" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Documents/" ".gtkrc-xfce" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" "android-studio/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".pki/" "eclipse-workspace/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" "flutterishere/" ".wine/" ".android/" ".xsession-errors.old" "amin_siddiqui.pdf" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
+
  ("/home/amin/Programming/javaPrograms/new/" (26713 31068 66696 670000) "SelectionSort.java" "./" "Greet.java" "pythonpro.py" "HelloWorld.class" "Bin.java" "Recursion.java" "../" "QuickSortNew.java" "IS.java" "HelloWorld.java" "IS.class" "InsertionSort.java" "Hello.class" "RecursionInArray.java" "fib.java" "BinaryS.java" "BinaryS.class" "Practicssss.java" "leetcode/" "Bin.class" "Solution1.java" "BinarySearch.class" "BS.class" "GoCorona.java" "BubbleSort.class" "BinS.class" "QuickS.java" "Hello.java" "QS.java" "P.java" "BinS.java" "InsertionSort.class" "Factorial.java" "QuickSort.class" "fib.class" "QS.class" "AminSort.java" "QuickSortBetter.java" "Test.java" "BubbleSort.java" "Solution.java" "BS.java" "Pattern.java" "GoCorona.class" "QuickSort.java" "BinarySearch.java" "Test.class" "RandomGeneration.java")
 
  ("/home/amin/Programming/cPrograms/yo/" (26713 22836 586122 460000) "./" "../" ".git/" "main.c" "a.out")
-
- ("/home/amin/.emacs.d/" (26713 24549 161640 140000) "./" "smex-items" "../" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "elpa/" "config.el" "README.md")
-
- ("/home/amin/" (26713 7062 448082 71000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Android/" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".lesshst" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Documents/" ".gtkrc-xfce" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" "android-studio/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".pki/" "eclipse-workspace/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" "flutterishere/" ".wine/" ".android/" ".xsession-errors.old" "amin_siddiqui.pdf" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
 
  ("/home/amin/Programming/purehtml/" (26713 6163 781370 930000) "./" "../" ".git/" "index.html" "README.md")
 

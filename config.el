@@ -3,7 +3,6 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-(set-background-color "#000000")
 (setq default-frame-alist (cons '(undecorated . t) 
 				(assq-delete-all 'undecorated default-frame-alist)))
 (setq display-line-numbers-type 'relative)
@@ -11,9 +10,6 @@
 (set-frame-font "11" nil t)
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
-;; (add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB"))
-;; (add-to-list 'default-frame-alist '(background-color . "#000000"))
-;; (set-foreground-color "#FFF")
 
 (global-subword-mode 1)
 
@@ -32,6 +28,12 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (setq ibuffer-expert t)
+
+(defun kill-whole-word()
+  (interactive)
+  (backward-word)
+  (kill-word 1))
+  (global-set-key (kbd "C-c w w") 'kill-whole-word)
 
 ;; autocomplete brackets
 (electric-pair-mode 1)
@@ -86,3 +88,7 @@
   (balance-windows)
   (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+
+(use-package hungry-delete
+  :ensure t
+  :config (global-hungry-delete-mode))
