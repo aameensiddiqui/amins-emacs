@@ -1,0 +1,22 @@
+(undo-tree-save-format-version . 1)
+"f8a694fac22e8704f64d06a70bda30369fd99608"
+[nil nil nil nil (26714 27701 973701 736000) 0 nil]
+([nil current ((1496 . 1735) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )" 0 239 (fontified nil)) . -1496) (1377 . 1494) (#("
+" 0 1 (fontified nil)) . -1377) (1257 . 1378) (#(" " 0 1 (fontified nil)) . 1257) (1227 . 1258) (#("
+" 0 1 (fontified nil)) . -1227) (1079 . 1228) (#(" " 0 1 (fontified nil)) . 1079) (813 . 1080) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '(\"e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7\" \"01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd\" default))
+ '(package-selected-packages
+   '(undo-tree spaceline diminish company dashboard rainbow-delimiters hungry-delete rainbow-mode smex gruber-darker-theme chess))
+ '(warning-suppress-log-types '((initialization)))
+ '(warning-suppress-types '((initialization) (initialization))))" 0 691 (fontified nil)) . -813) (t 26714 27336 397470 862000)) nil (26714 27701 973697 121000) 0 nil])
+nil

@@ -9,21 +9,10 @@
 				  (assq-delete-all 'undecorated default-frame-alist)))
   (setq display-line-numbers-type 'relative)
   (global-display-line-numbers-mode t)
-  (set-frame-font "11" nil t)
+  (set-frame-font "Monospace 11" nil t)
   ;; (global-hl-line-mode t)
   (setq scroll-conservatively 100)
 #+end_src
-** clock
-#+begin_src emacs-lisp
-  (display-time-mode 1)
-#+end_src
-
-** show line and column number on modeline
-#+begin_src emacs-lisp
-  (line-number-mode 1)
-  (column-number-mode 1)
-#+end_src
-
 ** subword camelcasing
 #+begin_src emacs-lisp
   (global-subword-mode 1)
@@ -81,12 +70,14 @@
 
 * dashboard
 #+begin_src emacs-lisp
-    (use-package dashboard
-      :ensure t
-      :config
-      (dashboard-setup-startup-hook)
-      (setq dashboard-items '((recents . 10)))
-      (setq dashboard-banner-logo-title "Welcome back!"))
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook)
+    (setq dashboard-items '((recents . 10)))
+    (setq dashboard-banner-logo-title "Welcome back!")
+    (setq dashboard-center-content nil)
+    (setq dashboard-init-info ""))
 #+end_src
 * Convenient functions
 ** kill whole word
@@ -149,10 +140,14 @@
 
 * org
 #+begin_src emacs-lisp
-;;  (use-package org-modern
-;;    :ensure t
-;;    :hook
-;;    (org-mode . org-modern-mode))
+    ;;  (use-package org-modern
+    ;;    :ensure t
+    ;;    :hook
+    ;;    (org-mode . org-modern-mode))
+#+end_src
+** shift select in org
+#+begin_src emacs-lisp
+  (setq org-support-shift-select 'always)
 #+end_src
 
 * yasnippet
@@ -217,12 +212,31 @@
 
 * modeline
 #+begin_src emacs-lisp
-      (use-package spaceline
-	:ensure t
-	:config
-	(require 'spaceline-config)
-	(setq powerline-default-separator (quote arrow))
-	(spaceline-spacemacs-theme))
+  ;;(use-package spaceline
+  ;;  :ensure t
+  ;;  :config
+  ;;  (require 'spaceline-config)
+  ;;  (setq powerline-default-separator (quote arrow))
+  ;;  (spaceline-spacemacs-theme))
+#+end_src
+** show line and column number on modeline
+#+begin_src emacs-lisp
+  (line-number-mode 1)
+  (column-number-mode 1)
+#+end_src
+** clock
+#+begin_src emacs-lisp
+  (display-time-mode 1)
+  ;;(setq display-time-format "%I:%M:%S")
+  ;;(setq display-time-interval 1) 
+#+end_src
+** file size
+#+begin_src emacs-lisp
+  (size-indication-mode 1)
+#+end_src
+** battery mode
+#+begin_src emacs-lisp
+    (display-battery-mode 0)
 #+end_src
 ** diminish (removes minor modes)
 #+begin_src emacs-lisp
@@ -235,3 +249,4 @@
       (diminish 'company-mode)
       (diminish 'subword-mode))
 #+end_src
+

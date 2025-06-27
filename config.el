@@ -7,14 +7,9 @@
 				(assq-delete-all 'undecorated default-frame-alist)))
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
-(set-frame-font "11" nil t)
+(set-frame-font "Monospace 11" nil t)
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
-
-(display-time-mode 1)
-
-(line-number-mode 1)
-(column-number-mode 1)
 
 (global-subword-mode 1)
 
@@ -49,7 +44,9 @@
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-items '((recents . 10)))
-  (setq dashboard-banner-logo-title "Welcome back!"))
+  (setq dashboard-banner-logo-title "Welcome back!")
+  (setq dashboard-center-content nil)
+  (setq dashboard-init-info ""))
 
 (defun kill-whole-word()
   (interactive)
@@ -94,6 +91,8 @@
 ;;    :hook
 ;;    (org-mode . org-modern-mode))
 
+(setq org-support-shift-select 'always)
+
 ;;    (use-package yasnippet
 ;;      ensure t)
 
@@ -134,12 +133,23 @@
   :ensure t
   :config (global-hungry-delete-mode))
 
-(use-package spaceline
-  :ensure t
-  :config
-  (require 'spaceline-config)
-  (setq powerline-default-separator (quote arrow))
-  (spaceline-spacemacs-theme))
+;;(use-package spaceline
+;;  :ensure t
+;;  :config
+;;  (require 'spaceline-config)
+;;  (setq powerline-default-separator (quote arrow))
+;;  (spaceline-spacemacs-theme))
+
+(line-number-mode 1)
+(column-number-mode 1)
+
+(display-time-mode 1)
+;;(setq display-time-format "%I:%M:%S")
+;;(setq display-time-interval 1)
+
+(size-indication-mode 1)
+
+(display-battery-mode 0)
 
 (use-package diminish
   :ensure t
