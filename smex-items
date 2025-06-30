@@ -14,7 +14,7 @@
 (
  (custom-theme-save . 1)
  (customize-themes . 5)
- (compile . 96)
+ (compile . 98)
  (shell . 32)
  (list-packages . 23)
  (recompile . 9)
@@ -28,7 +28,7 @@
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
  (shell-command . 4)
- (ansi-term . 21)
+ (ansi-term . 27)
  (describe-face . 1)
  (recover-file . 1)
  (display-time . 4)
