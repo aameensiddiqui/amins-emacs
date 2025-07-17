@@ -1,4 +1,4 @@
-(message "xX-init.el load ho gaya!-Xx")
+;; (message "xX-init.el load ho gaya!-Xx")
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
@@ -35,7 +35,7 @@
  '(custom-safe-themes
    '("e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" "01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd" default))
  '(package-selected-packages
-   '(diminish company dashboard rainbow-delimiters hungry-delete rainbow-mode smex gruber-darker-theme chess))
+   '(which-key exwm diminish company dashboard rainbow-delimiters rainbow-mode smex gruber-darker-theme chess))
  '(warning-suppress-log-types '((initialization)))
  '(warning-suppress-types '((initialization) (initialization))))
 

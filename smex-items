@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ make-directory
+ query-replace
  ansi-term
- compile
- html-mode
  list-packages
- display-time
+ eval-buffer
  package-autoremove
- recover-file
+ ispell-buffer
 )
 
 ;; ----- smex-data -----
@@ -16,11 +16,11 @@
  (customize-themes . 5)
  (compile . 98)
  (shell . 32)
- (list-packages . 23)
+ (list-packages . 26)
  (recompile . 9)
- (eval-buffer . 106)
- (package-autoremove . 12)
- (whitespace-mode . 1)
+ (eval-buffer . 108)
+ (package-autoremove . 15)
+ (whitespace-mode . 3)
  (list-character-sets . 1)
  (customize . 1)
  (kill-line . 3)
@@ -28,9 +28,15 @@
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
  (shell-command . 4)
- (ansi-term . 27)
+ (ansi-term . 40)
  (describe-face . 1)
  (recover-file . 1)
  (display-time . 4)
  (html-mode . 1)
+ (rectangle-mark-mode . 6)
+ (query-replace . 6)
+ (ispell-buffer . 1)
+ (dired-create-directory . 2)
+ (dired-create-empty-file . 2)
+ (make-directory . 1)
 )

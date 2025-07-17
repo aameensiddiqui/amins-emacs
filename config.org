@@ -13,9 +13,25 @@
   ;; (global-hl-line-mode t)
   (setq scroll-conservatively 100)
 #+end_src
+
 ** subword camelcasing
 #+begin_src emacs-lisp
   (global-subword-mode 1)
+#+end_src
+
+** fullscreen modes
+#+begin_src emacs-lisp
+  (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
+  (defun switch-fullscreen nil
+    (interactive)
+    (let* ((modes '(nil fullboth fullwidth fullheight))
+	   (cm (cdr (assoc 'fullscreen (frame-parameters) ) ) )
+	   (next (cadr (member cm modes) ) ) )
+      (modify-frame-parameters
+       (selected-frame)
+       (list (cons 'fullscreen next)))))
+
+  (define-key global-map [f11] 'switch-fullscreen)
 #+end_src
 
 * Terminal
@@ -205,9 +221,9 @@
 
 * hungry-delete package
 #+begin_src emacs-lisp
-  (use-package hungry-delete
-    :ensure t
-    :config (global-hungry-delete-mode))
+  ;; (use-package hungry-delete
+  ;;   :ensure t
+  ;;   :config (global-hungry-delete-mode))
 #+end_src
 
 * modeline

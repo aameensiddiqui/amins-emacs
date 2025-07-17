@@ -13,6 +13,18 @@
 
 (global-subword-mode 1)
 
+(add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
+(defun switch-fullscreen nil
+  (interactive)
+  (let* ((modes '(nil fullboth fullwidth fullheight))
+	 (cm (cdr (assoc 'fullscreen (frame-parameters) ) ) )
+	 (next (cadr (member cm modes) ) ) )
+    (modify-frame-parameters
+     (selected-frame)
+     (list (cons 'fullscreen next)))))
+
+(define-key global-map [f11] 'switch-fullscreen)
+
 (defvar my-term-shell "/bin/bash")
 (defadvice ansi-term (before force-bash)
   (interactive (list my-term-shell)))
@@ -129,9 +141,9 @@
   (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 
-(use-package hungry-delete
-  :ensure t
-  :config (global-hungry-delete-mode))
+;; (use-package hungry-delete
+;;   :ensure t
+;;   :config (global-hungry-delete-mode))
 
 ;;(use-package spaceline
 ;;  :ensure t
