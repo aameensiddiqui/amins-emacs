@@ -1,8 +1,8 @@
 
 ;; ----- smex-history -----
 (
- make-directory
  query-replace
+ make-directory
  ansi-term
  list-packages
  eval-buffer
@@ -34,7 +34,7 @@
  (display-time . 4)
  (html-mode . 1)
  (rectangle-mark-mode . 6)
- (query-replace . 6)
+ (query-replace . 9)
  (ispell-buffer . 1)
  (dired-create-directory . 2)
  (dired-create-empty-file . 2)

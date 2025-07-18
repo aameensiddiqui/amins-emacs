@@ -11,6 +11,9 @@
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
 
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+
 (global-subword-mode 1)
 
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)

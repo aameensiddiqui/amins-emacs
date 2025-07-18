@@ -14,6 +14,11 @@
   (setq scroll-conservatively 100)
 #+end_src
 
+** tab
+#+begin_src emacs-lisp
+  (setq-default tab-width 4)
+  (setq-default indent-tabs-mode nil)
+#+end_src
 ** subword camelcasing
 #+begin_src emacs-lisp
   (global-subword-mode 1)
