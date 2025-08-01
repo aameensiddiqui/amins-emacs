@@ -41,5 +41,5 @@
  (make-directory . 1)
  (recover-this-file . 1)
  (duplicate-line . 1)
- (org-insert-structure-template . 5)
+ (org-insert-structure-template . 6)
 )

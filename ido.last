@@ -36,11 +36,12 @@
  ("/home/amin/programming/javaPrograms/javaProjects/demo/src/" . "main/")
  ("/home/amin/programming/javaPrograms/" . "new/")
  ("/home/amin/programming/" . "cPrograms/")
- ("/home/amin/" . "Programming/")
+ ("/home/amin/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/amin/.emacs.d/"
  "/home/amin/Programming/programs/javaPrograms/"
  "/home/amin/Programming/programs/javaPrograms/leetcode/"
  "/home/amin/Programming/programs/cpp/"
@@ -57,7 +58,6 @@
  "/home/amin/Programming/programs/javaPrograms/new/leetcode/"
  "/home/amin/Programming/programs/javaPrograms/dsa/"
  "/home/amin/Programming/programs/javaPrograms/datastructures/"
- "/home/amin/.emacs.d/"
  "/home/amin/Programming/programs/react/react_notes/"
  "/home/amin/Programming/flutter_tasks/"
  "/home/amin/Programming/cce4/cc4e-master/assn/orig/"
@@ -85,6 +85,8 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "Makefile"
+ "README.d"
  "test.java"
  "Bananas.java"
  "SquareRootBinarySearch.java"
@@ -93,19 +95,17 @@
  "RotatedTimes.java"
  "SearchRotated.java"
  "MinInRotArray.java"
- "SearchRotatedII.java"
- "RotateArraycpp.cpp"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/amin/.emacs.d/" (26763 24852 754241 633000) "./" "smex-items" "../" "ido.last~" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "session.10103ee666841f799b175273897726018700000015160048" ".config.org.~undo-tree~" "recentf" "elpa/" "config.el" ".init.el.~undo-tree~" "README.md")
+ ("/home/amin/.emacs.d/" (26764 25945 181281 928000) "./" "smex-items" "../" "ido.last~" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "session.10103ee666841f799b175273897726018700000015160048" ".config.org.~undo-tree~" "recentf" "elpa/" "Makefile" "config.el" ".init.el.~undo-tree~" "README.md")
 
- ("/home/amin/Programming/programs/javaPrograms/leetcode/" (26763 24373 936406 440000) "./" "IntersectionArrays.java" "Bananas.class" "../" "ReverseCharArray.java" "RotateArray.java" "SquareRootBinarySearch.class" "PeakElement.java" "RotatedTimes.class" "SingleElement.class" "MinInRotArray.java" "PeakElement.class" "SearchRotatedII.class" "Parentheses.java" "Bananas.java" "IndexOfSubstring.java" "IsomorphicStrings.java" "ExcelSheetColumnTitle.java" "RotateArray.class" "SingleElement.java" "SquareRootBinarySearch.java" "SearchRotated.java" "RotatedTimes.java" "SearchRotated.class" "SearchRotatedII.java" "MinInRotArray.class")
+ ("/home/amin/Programming/programs/javaPrograms/leetcode/" (26764 24846 88960 449000) "./" "IntersectionArrays.java" "Bananas.class" "../" "ReverseCharArray.java" "RotateArray.java" "SquareRootBinarySearch.class" "PeakElement.java" "RotatedTimes.class" "SingleElement.class" "MinInRotArray.java" "PeakElement.class" "SearchRotatedII.class" "Parentheses.java" "Bananas.java" "IndexOfSubstring.java" "IsomorphicStrings.java" "ExcelSheetColumnTitle.java" "RotateArray.class" "SingleElement.java" "SquareRootBinarySearch.java" "SearchRotated.java" "RotatedTimes.java" "SearchRotated.class" "SearchRotatedII.java" "MinInRotArray.class")
 
- ("/home/amin/Programming/programs/javaPrograms/" (26763 20055 548537 121000) "jdbc/" "./" "codeabbey/" "../" "old/" "cses/" "leetcode/" "new/" "04_Data_Structures.zip" "04_Data_Structures/" "new java error" "games/" "dsa/")
+ ("/home/amin/Programming/programs/javaPrograms/" (26764 24295 303568 966000) "jdbc/" "./" "codeabbey/" "../" "old/" "test.java" "cses/" "leetcode/" "new/" "04_Data_Structures.zip" "04_Data_Structures/" "new java error" "games/" "dsa/")
 
- ("/home/amin/" (26764 21760 461771 725000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".node_repl_history" ".lesshst" "resume.pdf" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Postman/" "Documents/" ".gtkrc-xfce" ".bash_history-10149.tmp" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".bash_history-02591.tmp" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".viminfo" ".pki/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" ".wine/" ".android/" ".groovy/" ".xsession-errors.old" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
+ ("/home/amin/" (26764 25407 819682 266000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".node_repl_history" ".lesshst" "resume.pdf" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Postman/" "Documents/" ".gtkrc-xfce" ".bash_history-10149.tmp" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".bash_history-02591.tmp" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".viminfo" ".pki/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" ".wine/" ".android/" ".groovy/" ".xsession-errors.old" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
 
  ("/home/amin/Programming/programs/cpp/" (26760 40428 288207 22000) "./" "../" "SecondLargest.cpp" "RotateArraycpp.cpp" "file.cpp" "Test.cpp" "a.out")
 
