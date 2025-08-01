@@ -1,22 +1,22 @@
 
 ;; ----- smex-history -----
 (
- query-replace
- make-directory
- ansi-term
+ org-insert-structure-template
  list-packages
- eval-buffer
- package-autoremove
- ispell-buffer
+ duplicate-line
+ query-replace
+ ansi-term
+ compile
+ recover-this-file
 )
 
 ;; ----- smex-data -----
 (
  (custom-theme-save . 1)
  (customize-themes . 5)
- (compile . 98)
+ (compile . 110)
  (shell . 32)
- (list-packages . 26)
+ (list-packages . 30)
  (recompile . 9)
  (eval-buffer . 108)
  (package-autoremove . 15)
@@ -28,15 +28,18 @@
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
  (shell-command . 4)
- (ansi-term . 40)
+ (ansi-term . 42)
  (describe-face . 1)
  (recover-file . 1)
  (display-time . 4)
  (html-mode . 1)
  (rectangle-mark-mode . 6)
- (query-replace . 9)
+ (query-replace . 17)
  (ispell-buffer . 1)
  (dired-create-directory . 2)
  (dired-create-empty-file . 2)
  (make-directory . 1)
+ (recover-this-file . 1)
+ (duplicate-line . 1)
+ (org-insert-structure-template . 5)
 )

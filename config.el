@@ -78,6 +78,81 @@
      (point-at-eol)))))
 (global-set-key (kbd "C-c w l") 'copy-whole-line)
 
+(defun move-text-internal (arg)
+  (cond
+   ((and mark-active transient-mark-mode)
+    (if (> (point) (mark))
+        (exchange-point-and-mark))
+    (let ((column (current-column))
+          (text (delete-and-extract-region (point) (mark))))
+      (forward-line arg)
+      (move-to-column column t)
+      (set-mark (point))
+      (insert text)
+      (exchange-point-and-mark)
+      (setq deactivate-mark nil)))
+   (t
+    (let ((column (current-column)))
+      (beginning-of-line)
+      (when (or (> arg 0) (not (bobp)))
+        (forward-line)
+        (when (or (< arg 0) (not (eobp)))
+          (transpose-lines arg)
+          (when (and (eval-when-compile
+                       '(and (>= emacs-major-version 24)
+                             (>= emacs-minor-version 3)))
+                     (< arg 0))
+            (forward-line -1)))
+        (forward-line -1))
+      (move-to-column column t)))))
+
+(defun move-text-down (arg)
+  "Move region (transient-mark-mode active) or current line
+  arg lines down."
+  (interactive "*p")
+  (move-text-internal arg))
+
+(defun move-text-up (arg)
+  "Move region (transient-mark-mode active) or current line
+  arg lines up."
+  (interactive "*p")
+  (move-text-internal (- arg)))
+
+
+(global-set-key [M-up] 'move-text-up)
+(global-set-key [M-down] 'move-text-down)
+
+;; (defun move-line-up ()
+;; (interactive)
+;; (transpose-lines 1)
+;; (forward-line -2))
+;; (global-set-key (kbd "M-<up>") 'move-line-up)
+
+;; (defun move-line-down ()
+;; (interactive)
+;; (forward-line 1)
+;; (transpose-lines 1)
+;; (forward-line -1))
+;; (global-set-key (kbd "M-<down>") 'move-line-down)
+
+(defun duplicate-line-or-region ()
+  "Duplicate current line, or region if active."
+  (interactive)
+  (let (beg end (origin (point)))
+    (if (use-region-p)
+        ;; Duplicate region
+        (setq beg (region-beginning)
+              end (region-end))
+      ;; Duplicate current line
+      (setq beg (line-beginning-position)
+            end (line-end-position)))
+    (let ((region (buffer-substring beg end)))
+      (goto-char end)
+      (newline)
+      (insert region)
+      (goto-char origin))))
+(global-set-key (kbd "C-c d") 'duplicate-line-or-region)
+
 (use-package company
   :ensure t
   :init
