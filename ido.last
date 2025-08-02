@@ -36,14 +36,16 @@
  ("/home/amin/programming/javaPrograms/javaProjects/demo/src/" . "main/")
  ("/home/amin/programming/javaPrograms/" . "new/")
  ("/home/amin/programming/" . "cPrograms/")
- ("/home/amin/" . ".emacs.d/")
+ ("/home/amin/" . "Programming/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/amin/Programming/programs/javaPrograms/leetcode/"
+ "/home/amin/Programming/programs/javaPrograms/hackerrank/"
+ "/home/amin/Programming/programs/py/"
  "/home/amin/.emacs.d/"
  "/home/amin/Programming/programs/javaPrograms/"
- "/home/amin/Programming/programs/javaPrograms/leetcode/"
  "/home/amin/Programming/programs/cpp/"
  "/home/amin/Programming/programs/javaPrograms/new/"
  "/home/amin/Programming/programs/javaPrograms/jdbc/"
@@ -85,27 +87,35 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "ThirdMaxNum.java"
+ "StrCompare.java"
+ "Hello.py"
+ "KthMissing.java"
+ "SDT.java"
+ "config.el"
  "Makefile"
  "README.d"
  "test.java"
  "Bananas.java"
- "SquareRootBinarySearch.java"
- "PeakElement.java"
- "SingleElement.java"
- "RotatedTimes.java"
- "SearchRotated.java"
- "MinInRotArray.java"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/amin/.emacs.d/" (26764 25945 181281 928000) "./" "smex-items" "../" "ido.last~" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "session.10103ee666841f799b175273897726018700000015160048" ".config.org.~undo-tree~" "recentf" "elpa/" "Makefile" "config.el" ".init.el.~undo-tree~" "README.md")
+ ("/home/amin/.emacs.d/" (26765 47372 191127 752000) "./" "smex-items" "../" "ido.last~" "eln-cache/" "auto-save-list/" "init.el" "ido.last" "config.org" ".git/" "init.el.backup" "snippets/" "init.el~" "session.10103ee666841f799b175273897726018700000015160048" ".config.org.~undo-tree~" "recentf" "elpa/" "Makefile" "config.el" ".init.el.~undo-tree~" "README.md")
 
- ("/home/amin/Programming/programs/javaPrograms/leetcode/" (26764 24846 88960 449000) "./" "IntersectionArrays.java" "Bananas.class" "../" "ReverseCharArray.java" "RotateArray.java" "SquareRootBinarySearch.class" "PeakElement.java" "RotatedTimes.class" "SingleElement.class" "MinInRotArray.java" "PeakElement.class" "SearchRotatedII.class" "Parentheses.java" "Bananas.java" "IndexOfSubstring.java" "IsomorphicStrings.java" "ExcelSheetColumnTitle.java" "RotateArray.class" "SingleElement.java" "SquareRootBinarySearch.java" "SearchRotated.java" "RotatedTimes.java" "SearchRotated.class" "SearchRotatedII.java" "MinInRotArray.class")
+ ("/home/amin/Programming/programs/javaPrograms/hackerrank/" (26765 45272 754828 406000) "./" "../" "StrCompare.class" "StrCompare.java")
 
- ("/home/amin/Programming/programs/javaPrograms/" (26764 24295 303568 966000) "jdbc/" "./" "codeabbey/" "../" "old/" "test.java" "cses/" "leetcode/" "new/" "04_Data_Structures.zip" "04_Data_Structures/" "new java error" "games/" "dsa/")
+ ("/home/amin/" (26765 50615 572269 637000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".node_repl_history" ".lesshst" "resume.pdf" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Postman/" "Documents/" ".gtkrc-xfce" ".bash_history-10149.tmp" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".bash_history-02591.tmp" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".viminfo" ".pki/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" ".wine/" ".android/" ".groovy/" ".xsession-errors.old" ".java/" ".python_history" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
 
- ("/home/amin/" (26764 25407 819682 266000) ".sudo_as_admin_successful" ".bashrc" ".dotnet/" "./" "Pictures/" ".dart-tool/" ".vscode/" "Games/" ".emacs.d/" ".recently-used" ".npm/" "../" ".dmrc" "Desktop/" ".themes/" ".grasp_settings/" ".yarn/" ".node_repl_history" ".lesshst" "resume.pdf" ".local/" ".scidvspc/" ".gradle/" ".gtkrc-2.0" ".dartServer/" "Postman/" "Documents/" ".gtkrc-xfce" ".bash_history-10149.tmp" ".scid5.1/" ".icons/" ".profile" ".Xauthority" ".xsession-errors" "Amin_s library/" "Music/" ".gitconfig" ".yarnrc" ".bash_history-02591.tmp" ".armagetronad/" ".linuxmint/" "Templates/" ".mozilla/" ".bash_logout" ".mysql/" ".p2/" ".cache/" ".flutter-devtools/" ".swt/" ".gnupg/" ".nvm/" ".ssh/" ".pub-cache/" ".viminfo" ".pki/" ".mysql_history" ".m2/" ".flutter" ".emulator_console_auth_token" ".bash_history" ".wine/" ".android/" ".groovy/" ".xsession-errors.old" ".java/" ".rpmdb/" "Downloads/" ".mono/" ".var/" "Programming/" ".dosbox/" "Public/" ".thunderbird/" ".eclipse/" "Videos/" ".config/")
+ ("/home/amin/Documents/" (26765 42968 789548 234000) "./" "amin_ke_passwords - Emergency Sheet.pdf" "../" "uchchar.txt" "resume/" "resume.pdf" "amin_ke_pass_forget" "resume copy.odt" "amu_test.org" "Amin_Resume - Google Docs.pdf" "uchchar.pdf" "amin_s_pass - Emergency Sheet.html" "ka_kha_ga_gha" "ka_kha_ga_gha.pdf" "Aameen Internship.pdf" "amin_s_pass.kdbx" "aadil-mugal-resume-87e5e5050d12eaf4d3b00bf32c817720.pdf" "req_docs_for_passport.txt" "Copy of Copy of Amin_Resume - Google Docs.pdf")
+
+ ("/home/amin/Programming/programs/javaPrograms/leetcode/" (26764 51601 779469 596000) "./" "SDT.java" "IntersectionArrays.java" "Bananas.class" "../" "ReverseCharArray.java" "RotateArray.java" "SquareRootBinarySearch.class" "PeakElement.java" "RotatedTimes.class" "SingleElement.class" "MinInRotArray.java" "PeakElement.class" "SearchRotatedII.class" "Parentheses.java" "Bananas.java" "IndexOfSubstring.java" "IsomorphicStrings.java" "ExcelSheetColumnTitle.java" "KthMissing.java" "RotateArray.class" "SingleElement.java" "SquareRootBinarySearch.java" "SearchRotated.java" "RotatedTimes.java" "KthMissing.class" "SearchRotated.class" "SearchRotatedII.java" "SDT.class" "MinInRotArray.class")
+
+ ("/home/amin/Programming/programs/py/" (26764 55897 319795 184000) "./" "../" "Hello.py")
+
+ ("/home/amin/Programming/programs/javaPrograms/" (26765 43225 675261 836000) "jdbc/" "./" "codeabbey/" "../" "old/" "cses/" "leetcode/" "new/" "04_Data_Structures.zip" "04_Data_Structures/" "new java error" "hackerrank/" "games/" "dsa/")
+
+ ("/home/amin/Programming/programs/" (26764 51846 580971 227000) "./" "html/" "../" "cPrograms/" "cpp/" ".git/" "javaPrograms/" "react/" "javascript/" "py/" "mysql/" "README.md" ".gitignore")
 
  ("/home/amin/Programming/programs/cpp/" (26760 40428 288207 22000) "./" "../" "SecondLargest.cpp" "RotateArraycpp.cpp" "file.cpp" "Test.cpp" "a.out")
 
@@ -114,8 +124,6 @@
  ("/home/amin/Amin_s library/coding/" (26759 11377 996319 361000) "./" "Hacking_ the art of exploitation.pdf" "../" "java/" "Hackers - Heroes of the Computer Revolution - 25th -- Steven Levy, Steven Levy.pdf" "epdf.pub_writing-for-video-games.pdf" "TheBookOfCP-System.pdf" "os3ep.pdf" "Grokking Algorithms.pdf" "react/" "Operating Systems_ Three Easy Pieces.pdf" "c++/" "epdf.pub_programming-video-games-for-the-evil-geniusaf784ef19c336a655bb0ee57d8d29cb06895.pdf" "Head-First-Design-Patterns-2nd-Edition.pdf" "computers_for_smart_people.pdf" "charles petzold/" "head_first_learn_to_code.pdf" "ProgrammingGroundUp-1-0-booksize.pdf" "ECMA-335_6th_edition_june_2012.pdf" "c/" "Operating System Concepts - 9th Edition.pdf" "the_c_programming_language_2.pdf__oYmEmG/" "epdf.pub_programming-video-games-for-the-evil-genius.pdf" "Evans03.pdf" "The Art of Unit Testing, Second Edition.pdf" "test-driven-development-by-example.pdf" "Original-Microsoft-Source-Code.pdf" "mysql/" "head_first_software_development.pdf" "Total_Beginner_Companion_Document_For_Eclipse.pdf" "Pragmatic Thinking and Learning_ Refactor Your Wetware (Pragmatic Programmers).pdf" "zlib.pub_human-javascript.epub")
 
  ("/home/amin/Programming/programs/javaPrograms/jdbc/" (26758 22361 325291 173000) "./" "mysql-connector-j-9.3.0.jar" "../" "InsertBigImageJDBC/" "InsertImage.java" "InsertJDBC.java" "mysql-connector-j_9.3.0-1debian12_all/" ".metadata/" "Table.java" "Main.java" ".gitignore")
-
- ("/home/amin/Programming/programs/" (26758 22150 35401 672000) "./" "html/" "../" "cPrograms/" "cpp/" ".git/" "javaPrograms/" "react/" "javascript/" "mysql/" "README.md" ".gitignore")
 
  ("/home/amin/Programming/" (26758 22096 636433 170000) "./" "vsms/" "../" "others/" "programs/" "test/" "eclipse-workspace/" ".emacs_backups/" "saurabh/")
 
@@ -128,8 +136,6 @@
  ("/home/amin/Programming/programs/javaPrograms/dsa/Test/src/" (26753 63155 619043 505000) "./" "../" "main/" "test/")
 
  ("/home/amin/Programming/programs/javaPrograms/dsa/Test/" (26753 63155 605043 503000) "./" "gradlew.bat" "../" "gradle/" "src/" ".gradle/" "build.gradle" "gradlew" "settings.gradle")
-
- ("/home/amin/Documents/" (26749 60686 620807 333000) "./" "amin_ke_passwords - Emergency Sheet.pdf" "../" "uchchar.txt" "resume/" "resume.pdf" "amin_ke_pass_forget" "resume copy.odt" "amu_test.org" "Amin_Resume - Google Docs.pdf" "uchchar.pdf" "amin_s_pass - Emergency Sheet.html" "ka_kha_ga_gha" "ka_kha_ga_gha.pdf" "Aameen Internship.pdf" "amin_s_pass.kdbx" "aadil-mugal-resume-87e5e5050d12eaf4d3b00bf32c817720.pdf" "req_docs_for_passport.txt" "Copy of Copy of Amin_Resume - Google Docs.pdf")
 
  ("/home/amin/Programming/programs/javaPrograms/jdbc/InsertBigImageJDBC/" (26744 42460 238983 985000) "./" ".project" "../" "src/" "bin/" ".classpath" ".settings/" ".gitignore")
 
