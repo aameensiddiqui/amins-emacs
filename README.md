@@ -182,9 +182,8 @@
   (interactive "*p")
   (move-text-internal (- arg)))
 
-
-(global-set-key [M-up] 'move-text-up)
-(global-set-key [M-down] 'move-text-down)
+(global-set-key (kbd "M-<up>") 'move-text-up)
+(global-set-key (kbd "M-<down>") 'move-text-down)
 ```
 
 ### move line up
