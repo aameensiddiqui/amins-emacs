@@ -3,15 +3,27 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (setq default-frame-alist (cons '(undecorated . t) 
-				(assq-delete-all 'undecorated default-frame-alist)))
+                (assq-delete-all 'undecorated default-frame-alist)))
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
 (set-frame-font "Monospace 11" nil t)
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
+;; whitespaces
+;;'(whitespace-style
+;;(quote
+;; (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark)))
+
+;; (setq line-spacing 0.2)
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 4)   ;; for C, C++, Java, etc. in CC Mode
+;; (add-hook 'c++-ts-mode-hook
+;;         (lambda ()
+;;           (setq-local indent-tabs-mode nil)
+;;           (setq-local tab-width 4)
+;;           (setq-local treesit-simple-indent-offset 4)))
 
 (global-subword-mode 1)
 
@@ -27,10 +39,48 @@
 
 (define-key global-map [f11] 'switch-fullscreen)
 
-(defvar my-term-shell "/bin/bash")
-(defadvice ansi-term (before force-bash)
-  (interactive (list my-term-shell)))
-(ad-activate 'ansi-term)
+;; (defvar my-term-shell "/bin/bash")
+;; (defadvice ansi-term (before force-bash)
+;;   (interactive (list my-term-shell)))
+;; (ad-activate 'ansi-term)
+
+;; -------------------------------
+;; Open terminal in new buffer <f7>
+;; -------------------------------
+;; (defvar my-term-shell "/bin/bash"
+;;   "Default shell for my custom terminal.")
+;; (defun my/open-terminal ()
+;;   "Open ansi-term with my default shell in a new buffer."
+;;   (interactive)
+;;   (ansi-term my-term-shell))
+;; (global-set-key (kbd "<f7>") 'my/open-terminal)
+
+;; --------------------------------------
+;; <f7>: Open ONE terminal in a side window
+;; --------------------------------------
+(defvar my-term-shell "/bin/bash"
+  "Default shell for ansi-term.")
+(defvar my/terminal-buffer-name "*my-terminal*"
+  "Name of the single persistent terminal buffer.")
+(defun my/open-terminal ()
+  "Open or switch to the persistent ansi-term buffer.
+If it doesn't exist, create it. Show it in a vertical split."
+  (interactive)
+  (let ((buf (get-buffer my/terminal-buffer-name)))
+    (if (buffer-live-p buf)
+        ;; If terminal exists → display it
+        (progn
+          (unless (get-buffer-window buf)
+            (split-window-right)
+            (other-window 1))
+          (switch-to-buffer buf))
+      ;; Else → create terminal
+      (progn
+        (split-window-right)
+        (other-window 1)
+        (ansi-term my-term-shell)
+        (rename-buffer my/terminal-buffer-name)))))
+(global-set-key (kbd "<f7>") #'my/open-terminal)
 
 (setq ido-enable-flex-matching nil)
 (setq ido-create-new-buffer 'always)
@@ -43,14 +93,28 @@
 
 (setq ibuffer-expert t)
 
-(defun kill-current-buffer()
+;; kills only current buffer but window remains
+;; (defun kill-current-buffer()
+;;   (interactive)
+;;   (kill-buffer (current-buffer)))
+;; (global-set-key (kbd "C-x k") 'kill-current-buffer)
+
+;; kills current buffer and window
+(defun amins-kill-buffer-and-window ()
+  "Kill the current buffer and its window if more than one window is open."
   (interactive)
-  (kill-buffer (current-buffer)))
-(global-set-key (kbd "C-x k") 'kill-current-buffer)
+  (let ((win (selected-window)))
+    (kill-buffer (current-buffer))
+    ;; Only delete window if more than one window exists
+    (when (> (length (window-list)) 1)
+      (delete-window win))))
+
+(global-set-key (kbd "C-x k") #'amins-kill-buffer-and-window)
 
 (defun kill-all-buffers ()
   (interactive)
-  (mapc 'kill-buffer (buffer-list)))
+  (mapc #'kill-buffer (buffer-list))
+  (delete-other-windows))
 (global-set-key (kbd "C-x M-k") 'kill-all-buffers)
 
 (use-package dashboard
@@ -237,7 +301,7 @@
 
 (size-indication-mode 1)
 
-(display-battery-mode 0)
+(display-battery-mode 1)
 
 (use-package diminish
   :ensure t
@@ -247,3 +311,33 @@
   (diminish 'rainbow-mode)
   (diminish 'company-mode)
   (diminish 'subword-mode))
+
+;; -------------------------------
+;; C++ Compile <f8> and Debug Compile <f9>
+;; -------------------------------
+
+(defun my/cpp-compile ()
+  "Compile the current C++ file with optimized flags."
+  (interactive)
+  (let* ((src (buffer-file-name))
+         (base (file-name-sans-extension (file-name-nondirectory src)))
+         (cmd (format "g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result -o %s %s"
+                      base src)))
+    (compile cmd)))
+
+(defun my/cpp-debug-compile ()
+  "Compile the current C++ file with debug + sanitizers."
+  (interactive)
+  (let* ((src (buffer-file-name))
+         (base (file-name-sans-extension (file-name-nondirectory src)))
+         (cmd (format "g++ -std=c++17 -Wshadow -Wall -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -o %s %s"
+                      base src)))
+    (compile cmd)))
+
+;; Keybindings
+(global-set-key (kbd "<f8>") 'my/cpp-compile)
+(global-set-key (kbd "<f9>") 'my/cpp-debug-compile)
+(setq compilation-scroll-output t)
+(setq compilation-ask-about-save nil)
+
+(defalias 'yes-or-no-p 'y-or-n-p)

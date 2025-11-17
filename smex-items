@@ -2,25 +2,25 @@
 ;; ----- smex-history -----
 (
  org-insert-structure-template
- list-packages
- duplicate-line
- query-replace
+ eval-buffer
  ansi-term
- compile
- recover-this-file
+ term
+ shell
+ query-replace
+ whitespace-mode
 )
 
 ;; ----- smex-data -----
 (
  (custom-theme-save . 1)
  (customize-themes . 5)
- (compile . 110)
- (shell . 32)
- (list-packages . 30)
+ (compile . 111)
+ (shell . 33)
+ (list-packages . 32)
  (recompile . 9)
- (eval-buffer . 108)
+ (eval-buffer . 109)
  (package-autoremove . 15)
- (whitespace-mode . 3)
+ (whitespace-mode . 61)
  (list-character-sets . 1)
  (customize . 1)
  (kill-line . 3)
@@ -28,18 +28,27 @@
  (switch-to-prev-buffer . 1)
  (byte-compile-file . 4)
  (shell-command . 4)
- (ansi-term . 42)
+ (ansi-term . 45)
  (describe-face . 1)
  (recover-file . 1)
  (display-time . 4)
  (html-mode . 1)
  (rectangle-mark-mode . 6)
- (query-replace . 17)
+ (query-replace . 208)
  (ispell-buffer . 1)
  (dired-create-directory . 2)
  (dired-create-empty-file . 2)
  (make-directory . 1)
- (recover-this-file . 1)
+ (recover-this-file . 2)
  (duplicate-line . 1)
- (org-insert-structure-template . 7)
+ (org-insert-structure-template . 65)
+ (query-replace-regexp . 5)
+ (todo-mode . 2)
+ (magit-version . 1)
+ (mkdir . 3)
+ (font-lock-mode . 2)
+ (dired-do-touch . 1)
+ (jdb . 4)
+ (browse-url-of-file . 3)
+ (term . 1)
 )
