@@ -1,4 +1,5 @@
 * UI changes
+** basic
 #+begin_src emacs-lisp
   (setq inhibit-startup-screen t)
   (menu-bar-mode 0)
@@ -16,10 +17,113 @@
   ;;(quote
   ;; (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark)))
 #+end_src
+** theme
+*** Gruber-Darker-Theme
+#+begin_src emacs-lisp
+  ;; ----------------------------------------------------------
+  ;;                   Gruber-Darker-Theme
+  ;; ----------------------------------------------------------
+  (setq gruber-darker-theme 'gruber-darker)
+  (use-package gruber-darker-theme
+    :ensure t
+    :config
+    (load-theme 'gruber-darker t))
+  ;; ----------------------------------------------------------
+  ;; old code
+  ;; ----------------------------------------------------------
+  ;;(unless (package-installed-p 'gruber-darker-theme)
+  ;;  (package-refresh-contents)
+  ;;  (package-install 'gruber-darker-theme))
+
+  ;; (use-package gruber-darker-theme
+  ;;   :ensure t
+  ;;   :config
+  ;;   (load-theme 'gruber-darker t))
+  ;; ----------------------------------------------------------
+#+end_src
+
+*** Doom-Theme
+#+begin_src emacs-lisp
+  ;;----------------------------------------------------------
+  ;;                       Doom-Theme
+  ;;----------------------------------------------------------
+  ;; (setq doom-theme 'doom-one)
+  ;; (use-package doom-themes
+  ;;   :ensure t
+  ;;   :config
+  ;;   (load-theme 'doom-one t))
+#+end_src
+
+*** Sanityinc-Tomorrow-Night-Theme
+#+begin_src emacs-lisp
+  ;;-----------------------------------------------------------
+  ;;               Sanityinc-Tomorrow-Night-Theme
+  ;;-----------------------------------------------------------
+  ;; (setq color-theme-sanityinc-tomorrow 'sanityinc-tomorrow-night)
+  ;; (use-package color-theme-sanityinc-tomorrow
+  ;;   :ensure t
+  ;;   :config
+  ;;   (load-theme 'sanityinc-tomorrow-night t))
+#+end_src
+
+*** Sanityinc-Tomorrow-Bright-Theme
+#+begin_src emacs-lisp
+  ;;-----------------------------------------------------------
+  ;;               Sanityinc-Tomorrow-Bright-Theme
+  ;;-----------------------------------------------------------
+  ;; (setq color-theme-sanityinc-tomorrow 'sanityinc-tomorrow-bright)
+  ;; (use-package color-theme-sanityinc-tomorrow
+  ;;   :ensure t
+  ;;   :config
+  ;;   (load-theme 'sanityinc-tomorrow-bright t))
+#+end_src
+
+*** Color-Theme-Tomorrow
+#+begin_src emacs-lisp
+  ;;-----------------------------------------------------------
+  ;;               Color-Theme-Tomorrow
+  ;;-----------------------------------------------------------
+  ;; (add-to-list 'load-path "~/.emacs.d/")
+  ;; (require 'color-theme-tomorrow)
+  ;; (color-theme-tomorrow--define-theme night-bright)
+  ;; (load-theme 'tomorrow-night-bright t)
+  ;;-----------------------------------------------------------
+#+end_src
+
+** color
+*** Set-Face-Background-Color
+#+begin_src emacs-lisp
+  ;;-----------------------------------------------------------
+  ;;                 Set-Face-Background-Color
+  ;;-----------------------------------------------------------
+  (add-hook 'emacs-startup-hook
+            (lambda ()
+              (set-face-background 'default "#000000")))
+  (set-face-background 'default "#000000")
+  ;; ----------------------------------------------------------
+
+#+end_src
+
+** comments
+#+begin_src emacs-lisp
+  ;; (custom-set-faces
+  ;;  '(font-lock-comment-face ((t (:slant italic))))
+  ;;  '(font-lock-comment-delimiter-face ((t (:slant italic)))))
+
+  ;; (add-hook 'after-load-theme-hook
+  ;;         (lambda ()
+  ;;           (set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+  ;;           (set-face-attribute 'font-lock-comment-delimiter-face nil :slant 'italic)
+  ;;           (set-face-attribute 'font-lock-doc-face nil :slant 'italic)
+  ;;           (set-face-attribute 'font-lock-doc-string-face nil :slant 'italic)))
+
+#+end_src
+
 ** line spacing
 #+begin_src emacs-lisp
   ;; (setq line-spacing 0.2)
 #+end_src
+
 ** tab
 #+begin_src emacs-lisp
   (setq-default tab-width 4)
@@ -31,6 +135,7 @@
   ;;           (setq-local tab-width 4)
   ;;           (setq-local treesit-simple-indent-offset 4)))
 #+end_src
+
 ** subword camelcasing
 #+begin_src emacs-lisp
   (global-subword-mode 1)
@@ -421,6 +526,27 @@
       (diminish 'subword-mode))
 #+end_src
 
+* java
+#+begin_src emacs-lisp
+  ;; --------------------------------------
+  ;; java compile <f5> and strict compile <f6>
+  ;; --------------------------------------
+  (defun amins-java-compile ()
+    "Compile the current Java file with normal javac."
+    (interactive)
+    (let* ((src (buffer-file-name))
+           (cmd (format "javac %s" src)))
+      (compile cmd)))
+  (defun amins-java-compile-strict ()
+    "Compile Java with strict flags and detailed warnings."
+    (interactive)
+    (let* ((src (buffer-file-name))
+           ;; Add more flags depending on what you prefer
+           (cmd (format "javac -Xlint:all -Werror %s" src)))
+      (compile cmd)))
+  (global-set-key (kbd "<f5>") 'amins-java-compile)
+  (global-set-key (kbd "<f6>") 'amins-java-compile-strict)
+#+end_src
 * c++
 #+begin_src emacs-lisp
   ;; -------------------------------
@@ -456,3 +582,4 @@
 #+begin_src emacs-lisp
   (defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
+

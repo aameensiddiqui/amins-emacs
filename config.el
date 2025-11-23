@@ -14,6 +14,83 @@
 ;;(quote
 ;; (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark)))
 
+;; ----------------------------------------------------------
+;;                   Gruber-Darker-Theme
+;; ----------------------------------------------------------
+(setq gruber-darker-theme 'gruber-darker)
+(use-package gruber-darker-theme
+  :ensure t
+  :config
+  (load-theme 'gruber-darker t))
+;; ----------------------------------------------------------
+;; old code
+;; ----------------------------------------------------------
+;;(unless (package-installed-p 'gruber-darker-theme)
+;;  (package-refresh-contents)
+;;  (package-install 'gruber-darker-theme))
+
+;; (use-package gruber-darker-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'gruber-darker t))
+;; ----------------------------------------------------------
+
+;;----------------------------------------------------------
+;;                       Doom-Theme
+;;----------------------------------------------------------
+;; (setq doom-theme 'doom-one)
+;; (use-package doom-themes
+;;   :ensure t
+;;   :config
+;;   (load-theme 'doom-one t))
+
+;;-----------------------------------------------------------
+;;               Sanityinc-Tomorrow-Night-Theme
+;;-----------------------------------------------------------
+;; (setq color-theme-sanityinc-tomorrow 'sanityinc-tomorrow-night)
+;; (use-package color-theme-sanityinc-tomorrow
+;;   :ensure t
+;;   :config
+;;   (load-theme 'sanityinc-tomorrow-night t))
+
+;;-----------------------------------------------------------
+;;               Sanityinc-Tomorrow-Bright-Theme
+;;-----------------------------------------------------------
+;; (setq color-theme-sanityinc-tomorrow 'sanityinc-tomorrow-bright)
+;; (use-package color-theme-sanityinc-tomorrow
+;;   :ensure t
+;;   :config
+;;   (load-theme 'sanityinc-tomorrow-bright t))
+
+;;-----------------------------------------------------------
+;;               Color-Theme-Tomorrow
+;;-----------------------------------------------------------
+;; (add-to-list 'load-path "~/.emacs.d/")
+;; (require 'color-theme-tomorrow)
+;; (color-theme-tomorrow--define-theme night-bright)
+;; (load-theme 'tomorrow-night-bright t)
+;;-----------------------------------------------------------
+
+;;-----------------------------------------------------------
+;;                 Set-Face-Background-Color
+;;-----------------------------------------------------------
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (set-face-background 'default "#000000")))
+(set-face-background 'default "#000000")
+;; ----------------------------------------------------------
+
+;; (custom-set-faces
+;;  '(font-lock-comment-face ((t (:slant italic))))
+;;  '(font-lock-comment-delimiter-face ((t (:slant italic)))))
+
+;; (add-hook 'after-load-theme-hook
+;;         (lambda ()
+;;           (set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+;;           (set-face-attribute 'font-lock-comment-delimiter-face nil :slant 'italic)
+;;           (set-face-attribute 'font-lock-doc-face nil :slant 'italic)
+;;           (set-face-attribute 'font-lock-doc-string-face nil :slant 'italic)))
+
 ;; (setq line-spacing 0.2)
 
 (setq-default tab-width 4)
@@ -311,6 +388,25 @@ If it doesn't exist, create it. Show it in a vertical split."
   (diminish 'rainbow-mode)
   (diminish 'company-mode)
   (diminish 'subword-mode))
+
+;; --------------------------------------
+;; java compile <f5> and strict compile <f6>
+;; --------------------------------------
+(defun amins-java-compile ()
+  "Compile the current Java file with normal javac."
+  (interactive)
+  (let* ((src (buffer-file-name))
+         (cmd (format "javac %s" src)))
+    (compile cmd)))
+(defun amins-java-compile-strict ()
+  "Compile Java with strict flags and detailed warnings."
+  (interactive)
+  (let* ((src (buffer-file-name))
+         ;; Add more flags depending on what you prefer
+         (cmd (format "javac -Xlint:all -Werror %s" src)))
+    (compile cmd)))
+(global-set-key (kbd "<f5>") 'amins-java-compile)
+(global-set-key (kbd "<f6>") 'amins-java-compile-strict)
 
 ;; -------------------------------
 ;; C++ Compile <f8> and Debug Compile <f9>

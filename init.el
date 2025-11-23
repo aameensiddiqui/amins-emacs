@@ -10,19 +10,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; theme
-;;(unless (package-installed-p 'gruber-darker-theme)
-;;  (package-refresh-contents)
-;;  (package-install 'gruber-darker-theme))
-(use-package gruber-darker-theme
-  :ensure t
-  :config
-  (load-theme 'gruber-darker t))
-
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            (set-face-background 'default "#000000")))
-
 ;; backup files configuration
 (setq backup-directory-alist `(("." . "~/Programming/.emacs_backups/backups")))
 
@@ -33,9 +20,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" "01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd" default))
+   '("1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" "01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd" default))
  '(package-selected-packages
-   '(magit lua-mode drepl which-key exwm diminish company dashboard rainbow-delimiters rainbow-mode smex gruber-darker-theme chess))
+   '(sanityinc-tomorrow-night-theme color-theme-sanityinc-tomorrow gruvbox-theme doom-themes emms magit lua-mode drepl which-key exwm diminish company dashboard rainbow-delimiters rainbow-mode smex gruber-darker-theme chess))
  '(warning-suppress-log-types '((initialization)))
  '(warning-suppress-types '((initialization) (initialization))))
 
