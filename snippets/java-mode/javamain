@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: javamain
+# key: java
+# --
+class `(file-name-base (or (buffer-file-name) (buffer-name)))` {
+    public static void main(String[]args) {
+        $0
+    }
+}

@@ -1,2 +1,0 @@
-;; Generated package description from drepl.el  -*- no-byte-compile: t -*-
-(define-package "drepl" "0.3" "REPL protocol for the dumb terminal" '((emacs "29.1") (comint-mime "0.3")) :commit "07c4503763b5880f163b417194d580677f37a819" :authors '(("Augusto Stoffel" . "arstoffel@gmail.com")) :maintainer '("Augusto Stoffel" . "arstoffel@gmail.com") :keywords '("languages" "processes") :url "https://github.com/astoff/drepl")

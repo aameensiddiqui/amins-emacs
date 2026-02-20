@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: java-io-print
+# key: io
+# --
+IO.println($0);

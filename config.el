@@ -1,9 +1,9 @@
-(setq inhibit-startup-screen t)
+;;(setq inhibit-startup-screen t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-(setq default-frame-alist (cons '(undecorated . t) 
-                (assq-delete-all 'undecorated default-frame-alist)))
+;; (setq default-frame-alist (cons '(undecorated . t) 
+;;                 (assq-delete-all 'undecorated default-frame-alist)))
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
 (set-frame-font "Monospace 11" nil t)
@@ -74,11 +74,15 @@
 ;;-----------------------------------------------------------
 ;;                 Set-Face-Background-Color
 ;;-----------------------------------------------------------
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            (set-face-background 'default "#000000")))
-(set-face-background 'default "#000000")
+;; (add-hook 'emacs-startup-hook
+;;           (lambda ()
+;;             (set-face-background 'default "#000000")))
+;; (set-face-background 'default "#000000")
 ;; ----------------------------------------------------------
+
+(setq-default whitespace-style
+              '(face trailing tabs spaces empty space-mark tab-mark))
+(global-whitespace-mode 1)
 
 ;; (custom-set-faces
 ;;  '(font-lock-comment-face ((t (:slant italic))))
@@ -108,8 +112,8 @@
 (defun switch-fullscreen nil
   (interactive)
   (let* ((modes '(nil fullboth fullwidth fullheight))
-	 (cm (cdr (assoc 'fullscreen (frame-parameters) ) ) )
-	 (next (cadr (member cm modes) ) ) )
+     (cm (cdr (assoc 'fullscreen (frame-parameters) ) ) )
+     (next (cadr (member cm modes) ) ) )
     (modify-frame-parameters
      (selected-frame)
      (list (cons 'fullscreen next)))))
@@ -292,10 +296,15 @@ If it doesn't exist, create it. Show it in a vertical split."
       (goto-char origin))))
 (global-set-key (kbd "C-c d") 'duplicate-line-or-region)
 
-(use-package company
-  :ensure t
-  :init
-  (add-hook 'after-init-hook 'global-company-mode))
+;; (use-package company
+;;   :ensure t
+;;   :init
+;;   (add-hook 'after-init-hook 'global-company-mode))
+;; (require 'company)
+(global-company-mode 1)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0.1)
+(setq company-minimum-prefix-length 1)
 
 ;; autocomplete brackets
 (electric-pair-mode 1)
@@ -324,6 +333,10 @@ If it doesn't exist, create it. Show it in a vertical split."
 
 ;;    (use-package yasnippet
 ;;      ensure t)
+(require 'yasnippet)
+(setq yas/triggers-in-field nil)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+(yas-global-mode 1)
 
 (defun config-visit ()
   (interactive)
@@ -437,3 +450,67 @@ If it doesn't exist, create it. Show it in a vertical split."
 (setq compilation-ask-about-save nil)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; ================================
+;; MIT Scheme Development
+;; ================================
+
+(require 'geiser)
+(require 'geiser-mit)
+
+;; Use MIT Scheme as the default Geiser backend
+(setq geiser-active-implementations '(mit))
+
+;; If MIT Scheme is not found automatically, uncomment & fix path:
+;; (setq geiser-mit-binary "/usr/bin/mit-scheme")
+
+;; Enable Geiser, Paredit, and Rainbow parentheses in Scheme mode
+(add-hook 'scheme-mode-hook #'geiser-mode)
+(add-hook 'scheme-mode-hook #'paredit-mode)
+(add-hook 'scheme-mode-hook #'rainbow-delimiters-mode)
+
+;; Always redefine functions when loading a Scheme file
+(setq geiser-mit-guile-load-options '("redefine"))
+
+;; Better indentation for SICP style
+(setq scheme-indent-function 'common-lisp-indent-function)
+
+(use-package emmet-mode
+:ensure t
+:hook ((web-mode . emmet-mode)
+       (rjsx-mode . emmet-mode)
+       (html-mode . emmet-mode))
+:config
+(setq emmet-expand-jsx-className? t))
+
+;; js jsx setup
+(require 'rjsx-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+
+(defun my-js-setup ()
+  (setq js-indent-level 2)
+  (setq tab-width 2))
+
+(add-hook 'rjsx-mode-hook 'my-js-setup)
+
+;; html jsx via web-hook
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+
+(defun my-web-mode-setup ()
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq tab-width 2))
+
+(add-hook 'web-mode-hook 'my-web-mode-setup)
+
+;; eglot(lsp support)
+(add-hook 'rjsx-mode-hook 'eglot-ensure)
+(add-hook 'web-mode-hook 'eglot-ensure)
+
+;; emmet
+(add-hook 'html-mode-hook 'eglot-ensure)
+(add-hook 'web-mode-hook 'eglot-ensure)

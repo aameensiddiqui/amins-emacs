@@ -22,7 +22,7 @@
  '(custom-safe-themes
    '("1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" "01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd" default))
  '(package-selected-packages
-   '(sanityinc-tomorrow-night-theme color-theme-sanityinc-tomorrow gruvbox-theme doom-themes emms magit lua-mode drepl which-key exwm diminish company dashboard rainbow-delimiters rainbow-mode smex gruber-darker-theme chess))
+   '(emmet-mode rjsx-mode web-mode php-mode flymake paredit geiser-mit geiser yasnippet sanityinc-tomorrow-night-theme color-theme-sanityinc-tomorrow gruvbox-theme doom-themes emms magit lua-mode drepl which-key exwm diminish company dashboard rainbow-delimiters rainbow-mode smex gruber-darker-theme chess))
  '(warning-suppress-log-types '((initialization)))
  '(warning-suppress-types '((initialization) (initialization))))
 

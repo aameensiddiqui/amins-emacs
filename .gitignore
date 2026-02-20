@@ -1,0 +1,16 @@
+# Emacs generated files
+eln-cache/
+elpa/
+auto-save-list/
+recentf
+ido.last
+smex-items
+session.*
+transient/
+
+# Package archives
+elpa/archives/
+
+# Backup files
+*~
+#*#
