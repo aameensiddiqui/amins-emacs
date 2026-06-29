@@ -1,18 +1,48 @@
+(require 'package)
+
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ("gnu" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;;(setq inhibit-startup-screen t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-;; (setq default-frame-alist (cons '(undecorated . t) 
+(setq ring-bell-function 'ignore)
+;; (setq default-frame-alist (cons '(undecorated . t)
 ;;                 (assq-delete-all 'undecorated default-frame-alist)))
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
-(set-frame-font "Monospace 11" nil t)
+
+;;=============================;;
+;;         font size           ;;
+;;=============================;;
+(set-frame-font "Iosevka 12" nil t)
+;; (set-frame-font "12" nil t)
+
 ;; (global-hl-line-mode t)
 (setq scroll-conservatively 100)
 ;; whitespaces
 ;;'(whitespace-style
 ;;(quote
 ;; (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark)))
+
+;;=================================================;;
+;; for new split buffer like compilation and magit ;;
+;; which will always split below                   ;;
+;;=================================================;;
+(setq split-height-threshold 0)                    ;;
+(setq split-width-threshold nil)                   ;;
+;;=================================================;;
 
 ;; ----------------------------------------------------------
 ;;                   Gruber-Darker-Theme
@@ -296,15 +326,21 @@ If it doesn't exist, create it. Show it in a vertical split."
       (goto-char origin))))
 (global-set-key (kbd "C-c d") 'duplicate-line-or-region)
 
-;; (use-package company
-;;   :ensure t
-;;   :init
-;;   (add-hook 'after-init-hook 'global-company-mode))
-;; (require 'company)
-(global-company-mode 1)
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package company
+:init
+(global-company-mode)
+:config
 (setq company-idle-delay 0.1)
-(setq company-minimum-prefix-length 1)
+(setq company-minimum-prefix-length 1))
+;;  (use-package company
+;;    :ensure t
+;;    :init
+;;    (add-hook 'after-init-hook 'global-company-mode))
+;;  (require 'company)
+;; (global-company-mode 1)
+;; (add-hook 'after-init-hook 'global-company-mode)
+;; (setq company-idle-delay 0.1)
+;; (setq company-minimum-prefix-length 1)
 
 ;; autocomplete brackets
 (electric-pair-mode 1)
@@ -316,9 +352,12 @@ If it doesn't exist, create it. Show it in a vertical split."
   (which-key-mode))
 
 ;; smex package config
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+(use-package smex
+  :init
+  (smex-initialize)
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command))
 
 ;; enable disabled commands
 (put 'upcase-region 'disabled nil)
@@ -331,12 +370,21 @@ If it doesn't exist, create it. Show it in a vertical split."
 
 (setq org-support-shift-select 'always)
 
+(use-package yasnippet
+:config
+(setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+(setq yas/triggers-in-field nil)
+(yas-global-mode 1))
 ;;    (use-package yasnippet
 ;;      ensure t)
-(require 'yasnippet)
-(setq yas/triggers-in-field nil)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
-(yas-global-mode 1)
+;; (use-package yasnippet
+;; :config
+;; (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+
+;;(require 'yasnippet)
+;; (setq yas/triggers-in-field nil)
+;;(setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+;; (yas-global-mode 1)
 
 (defun config-visit ()
   (interactive)
@@ -353,9 +401,11 @@ If it doesn't exist, create it. Show it in a vertical split."
   :init (rainbow-mode 1))
 
 (use-package rainbow-delimiters
-  :ensure t
-  :init
-  (rainbow-delimiters-mode 1))
+  :hook (prog-mode . rainbow-delimiters-mode))
+  ;; (use-package rainbow-delimiters
+  ;;   :ensure t
+  ;;   :init
+  ;;   (rainbow-delimiters-mode 1))
 
 (defun split-and-follow-horizontally ()
   (interactive)
@@ -455,25 +505,39 @@ If it doesn't exist, create it. Show it in a vertical split."
 ;; MIT Scheme Development
 ;; ================================
 
-(require 'geiser)
-(require 'geiser-mit)
+(use-package geiser
+  :ensure t)
 
-;; Use MIT Scheme as the default Geiser backend
-(setq geiser-active-implementations '(mit))
+(use-package geiser-mit
+  :ensure t
+  :after geiser
+  :config
+  (setq geiser-active-implementations '(mit)))
 
-;; If MIT Scheme is not found automatically, uncomment & fix path:
-;; (setq geiser-mit-binary "/usr/bin/mit-scheme")
-
-;; Enable Geiser, Paredit, and Rainbow parentheses in Scheme mode
 (add-hook 'scheme-mode-hook #'geiser-mode)
 (add-hook 'scheme-mode-hook #'paredit-mode)
 (add-hook 'scheme-mode-hook #'rainbow-delimiters-mode)
 
-;; Always redefine functions when loading a Scheme file
-(setq geiser-mit-guile-load-options '("redefine"))
+;; (require 'geiser)
+;; (require 'geiser-mit)
 
-;; Better indentation for SICP style
-(setq scheme-indent-function 'common-lisp-indent-function)
+;; ;; Use MIT Scheme as the default Geiser backend
+;; (setq geiser-active-implementations '(mit))
+
+;; ;; If MIT Scheme is not found automatically, uncomment & fix path:
+;; ;; (setq geiser-mit-binary "/usr/bin/mit-scheme")
+
+;; ;; Enable Geiser, Paredit, and Rainbow parentheses in Scheme mode
+;; (add-hook 'scheme-mode-hook #'geiser-mode)
+;; (add-hook 'scheme-mode-hook #'paredit-mode)
+;; (add-hook 'scheme-mode-hook #'rainbow-delimiters-mode)
+
+;; ;; Always redefine functions when loading a Scheme file
+;; ;; (setq geiser-mit-guile-load-options '("redefine"))
+;; (setq geiser-mit-load-options '("redefine"))
+
+;; ;; Better indentation for SICP style
+;; (setq scheme-indent-function 'common-lisp-indent-function)
 
 (use-package emmet-mode
 :ensure t
@@ -484,26 +548,30 @@ If it doesn't exist, create it. Show it in a vertical split."
 (setq emmet-expand-jsx-className? t))
 
 ;; js jsx setup
-(require 'rjsx-mode)
+;;(require 'rjsx-mode)
+(use-package rjsx-mode
+  :ensure t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 
 (defun my-js-setup ()
-  (setq js-indent-level 2)
-  (setq tab-width 2))
+  (setq js-indent-level 4)
+  (setq tab-width 4))
 
 (add-hook 'rjsx-mode-hook 'my-js-setup)
 
 ;; html jsx via web-hook
-(require 'web-mode)
+;;(require 'web-mode)
+(use-package web-mode
+  :ensure t)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 
 (defun my-web-mode-setup ()
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq tab-width 2))
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq tab-width 4))
 
 (add-hook 'web-mode-hook 'my-web-mode-setup)
 
@@ -514,3 +582,6 @@ If it doesn't exist, create it. Show it in a vertical split."
 ;; emmet
 (add-hook 'html-mode-hook 'eglot-ensure)
 (add-hook 'web-mode-hook 'eglot-ensure)
+
+(use-package magit
+  :ensure t)
